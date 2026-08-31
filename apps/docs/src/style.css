@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b0d10;
+  --surface: #141820;
+  --text: #e8edf5;
+  --muted: #9aa6b8;
+  --accent: #5b9cff;
+  --accent-hover: #7ab0ff;
+  --border: #273041;
+  --ok: #3ecf8e;
+  --warn: #f0b429;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+.container {
+  width: min(960px, 92vw);
+  margin: 0 auto;
+}
+
+header {
+  padding: 3rem 0 2rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.125rem;
+  max-width: 52ch;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+button,
+.button {
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #04101f;
+  font-weight: 600;
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.grid-2 {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+#key-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #0f2418;
+  border: 1px solid #1f5c3d;
+  display: none;
+  word-break: break-all;
+}
+
+#key-result.visible {
+  display: block;
+}
+
+#key-result code {
+  color: var(--ok);
+}
+
+.error {
+  color: #ff8f8f;
+  margin-top: 0.75rem;
+}
+
+footer {
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assess API — Honeypot-aware bounty scoring</title>
+    <meta
+      name="description"
+      content="Assess before you attempt. API scoring for GitHub paid-work issues — farms, exfil traps, unfunded bait, claimed bounties."
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <p class="muted">Assess API</p>
+        <h1>Assess before you attempt.</h1>
+        <p class="lead">
+          Honeypot-aware scoring for GitHub paid-work issues — farms, exfil traps,
+          unfunded bait, and claimed bounties. Returns a verdict, score, and signal
+          evidence your agent or UI can act on.
+        </p>
+        <div class="cta-row">
+          <button id="signup-btn" class="button button-primary" type="button">
+            Get API key (free)
+          </button>
+          <a
+            class="button button-secondary"
+            href="https://github.com/Dendro-X0/Assess/blob/main/openapi/assess-v0.yaml"
+            target="_blank"
+            rel="noreferrer"
+          >
+            OpenAPI spec
+          </a>
+        </div>
+        <div id="key-result"></div>
+        <p id="signup-error" class="error"></p>
+        <p class="muted" style="margin-top: 1rem">
+          <code>POST /v1/assess</code> · public GitHub only · heuristic, not legal advice
+        </p>
+      </header>
+
+      <section>
+        <h2>How it works</h2>
+        <p>Paste a GitHub issue URL → API returns verdict + score + signals → your workflow decides.</p>
+        <pre class="card"><code>curl -s http://localhost:8787/v1/assess \
+  -H "Authorization: Bearer YOUR_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"mode":"opportunity","url":"https://github.com/owner/repo/issues/1"}'</code></pre>
+      </section>
+
+      <section>
+        <h2>Signals (MVP eight)</h2>
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Detects</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>AF-01</td><td>Bulk bounty honeypot boards</td></tr>
+            <tr><td>AF-02</td><td>High reward on thin repos</td></tr>
+            <tr><td>AF-04</td><td>Prompt / session exfil bait</td></tr>
+            <tr><td>AF-05</td><td>Claim saturation on open issues</td></tr>
+            <tr><td>AF-06</td><td>Stale or graveyard repos</td></tr>
+            <tr><td>AF-07</td><td>Unfunded or no escrow markers</td></tr>
+            <tr><td>AF-11</td><td>Reputable owner / legitimacy</td></tr>
+            <tr><td>AF-12</td><td>Funded platform track (Algora, Immunefi)</td></tr>
+          </tbody>
+        </table>
+        <p class="muted">Heuristic scoring only. Payout not guaranteed.</p>
+      </section>
+
+      <section>
+        <h2>Pricing</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Free</h3>
+            <p class="price">$0</p>
+            <p class="muted">20 assesses / month · 10 req/min</p>
+            <p>Opportunity mode · signal evidence</p>
+          </div>
+          <div class="card">
+            <h3>Pro</h3>
+            <p class="price">$29/mo</p>
+            <p class="muted">500 assesses / month · 60 req/min</p>
+            <p><a id="polar-link" href="#">Upgrade to Pro</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>FAQ</h2>
+        <div class="card">
+          <p><strong>Is this calling people scammers?</strong> No — pattern-based opportunity risk on public GitHub data.</p>
+          <p><strong>vs bounty-doctor?</strong> CLI is free local; Assess is API-native JSON for agents and platforms.</p>
+          <p><strong>False positives?</strong> Calibration set + evidence payloads; report disagreements to improve thresholds.</p>
+        </div>
+      </section>
+
+      <footer>
+        Assess API · Docs · OpenAPI · Public GitHub only · Not legal or payout advice
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

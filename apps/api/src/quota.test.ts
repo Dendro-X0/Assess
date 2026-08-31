@@ -9,6 +9,8 @@ function testEnv(): Env {
     port: 8787,
     databaseUrl: ":memory:",
     apiKeyPepper: "test-pepper",
+    corsOrigins: ["http://localhost:5173"],
+    signupRatePerHour: 5,
   };
 }
 

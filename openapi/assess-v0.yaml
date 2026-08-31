@@ -35,6 +35,50 @@ paths:
                 properties:
                   ok:
                     type: boolean
+  /keys:
+    post:
+      tags: [meta]
+      summary: Create a free-tier API key
+      operationId: postKeys
+      description: Public signup. Key shown once. Rate limited per IP.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                label:
+                  type: string
+                  maxLength: 64
+      responses:
+        "201":
+          description: API key created
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [id, key, plan, monthlyQuota, ratePerMinute, message]
+                properties:
+                  id:
+                    type: string
+                  key:
+                    type: string
+                  plan:
+                    type: string
+                    enum: [free]
+                  monthlyQuota:
+                    type: integer
+                  ratePerMinute:
+                    type: integer
+                  message:
+                    type: string
+        "429":
+          description: Signup rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
   /assess:
     post:
       tags: [assess]

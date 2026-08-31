@@ -19,7 +19,17 @@ pnpm install
 cp .env.example .env
 # optional: GITHUB_TOKEN=ghp_... for higher rate limits
 
+# API server (port 8787)
 pnpm dev
+
+# Docs landing (port 5173) — in another terminal
+pnpm dev:docs
+```
+
+Or both together:
+
+```bash
+pnpm dev:all
 ```
 
 Health:
@@ -67,6 +77,7 @@ pnpm assess-local "https://github.com/Scottcjn/rustchain-bounties/issues/16776"
 ## MVP scope (current)
 
 - `GET /v1/health`
+- `POST /v1/keys` — public free-tier signup (rate limited per IP)
 - `POST /v1/assess` — `opportunity` mode only
 - `POST /v1/webhooks/polar` — Polar subscription webhooks (Pro upgrade/downgrade)
 - Core eight signals: AF-01, 02, 04, 05, 06, 07, 11, 12 (+ AF-03/08/09/10 stubs)
@@ -76,7 +87,7 @@ pnpm assess-local "https://github.com/Scottcjn/rustchain-bounties/issues/16776"
 ## Not yet implemented
 
 - Polar checkout product setup + live checkout link (D3)
-- Public docs site (D4)
+- Deployed production docs (local `apps/docs` ships)
 - Actor mode, batch, webhooks
 
 ## Scripts
@@ -100,6 +111,8 @@ pnpm calibration
 | `DEV_API_KEY` | dev | Bearer token accepted without DB row |
 | `POLAR_WEBHOOK_SECRET` | prod | Standard Webhooks secret for `/v1/webhooks/polar` |
 | `POLAR_CHECKOUT_URL` | prod | Polar checkout link for Pro upgrades |
+| `CORS_ORIGINS` | no | Comma-separated origins for docs signup (default localhost:5173) |
+| `SIGNUP_RATE_PER_HOUR` | no | Max API keys per IP per hour (default `5`) |
 
 ## License
 

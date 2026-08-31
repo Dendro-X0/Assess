@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm --filter @assess/api dev",
+    "dev:docs": "pnpm --filter @assess/docs dev",
+    "dev:all": "pnpm --parallel --filter @assess/api --filter @assess/docs dev",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r --filter './packages/*' build && pnpm -r typecheck",
     "test": "pnpm -r test",

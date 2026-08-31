@@ -30,14 +30,20 @@ export type AssessDb = {
   verifyApiKey: (token: string) => ApiKeyRecord | null;
   countUsageThisMonth: (keyId: string) => number;
   countRequestsLastMinute: (keyId: string) => number;
+  countSignupsLastHour: (ip: string) => number;
   recordUsage: (keyId: string, assessId: string) => void;
   recordRateEvent: (keyId: string) => void;
+  recordSignup: (ip: string, keyId: string) => void;
   insertApiKey: (record: ApiKeyRecord) => void;
   updateKeyPlan: (input: UpdateKeyPlanInput) => boolean;
 };
 
 function hashKey(token: string, pepper: string): string {
   return createHash("sha256").update(`${pepper}:${token}`).digest("hex");
+}
+
+function hashIp(ip: string, pepper: string): string {
+  return createHash("sha256").update(`${pepper}:signup:${ip}`).digest("hex");
 }
 
 function ensureColumn(
@@ -90,6 +96,16 @@ export function createDb(env: Env): AssessDb {
 
     CREATE INDEX IF NOT EXISTS idx_rate_key_time
       ON rate_events (key_id, created_at);
+
+    CREATE TABLE IF NOT EXISTS signup_events (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      ip_hash TEXT NOT NULL,
+      key_id TEXT NOT NULL,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_signup_ip_time
+      ON signup_events (ip_hash, created_at);
   `);
 
   ensureColumn(db, "api_keys", "polar_customer_id", "TEXT");
@@ -113,6 +129,14 @@ export function createDb(env: Env): AssessDb {
     "INSERT INTO usage_events (key_id, assess_id) VALUES (?, ?)",
   );
   const insertRate = db.prepare("INSERT INTO rate_events (key_id) VALUES (?)");
+  const countSignups = db.prepare(`
+    SELECT COUNT(*) as count FROM signup_events
+    WHERE ip_hash = ?
+      AND created_at >= datetime('now', '-1 hour')
+  `);
+  const insertSignup = db.prepare(
+    "INSERT INTO signup_events (ip_hash, key_id) VALUES (?, ?)",
+  );
   const insertKey = db.prepare(`
     INSERT INTO api_keys (
       id, key_hash, plan, monthly_quota, label, polar_customer_id, polar_subscription_id
@@ -186,6 +210,13 @@ export function createDb(env: Env): AssessDb {
     recordRateEvent: (keyId: string) => {
       if (keyId === "dev") return;
       insertRate.run(keyId);
+    },
+    countSignupsLastHour: (ip: string) => {
+      const row = countSignups.get(hashIp(ip, env.apiKeyPepper)) as { count: number };
+      return row.count;
+    },
+    recordSignup: (ip: string, keyId: string) => {
+      insertSignup.run(hashIp(ip, env.apiKeyPepper), keyId);
     },
     insertApiKey: (record: ApiKeyRecord) => {
       insertKey.run({
