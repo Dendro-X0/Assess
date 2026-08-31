@@ -1,0 +1,696 @@
+{
+  "meta": {
+    "url": "https://github.com/Scottcjn/rustchain-bounties/issues/1154",
+    "human_verdict": "avoid",
+    "notes": "Easy RTC crypto bounty on same farm board",
+    "expected_signals": [
+      "AF-01",
+      "AF-07"
+    ],
+    "slug": "scottcjn-rustchain-bounties-1154",
+    "fetchedAt": "2026-08-31T15:01:02.882Z"
+  },
+  "context": {
+    "parsed": {
+      "owner": "Scottcjn",
+      "repo": "rustchain-bounties",
+      "issueNumber": 1154
+    },
+    "issue": {
+      "url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/1154",
+      "repository_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "labels_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/1154/labels{/name}",
+      "comments_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/1154/comments",
+      "events_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/1154/events",
+      "html_url": "https://github.com/Scottcjn/rustchain-bounties/issues/1154",
+      "id": 4040247394,
+      "node_id": "I_kwDORGgqa87w0Uhi",
+      "number": 1154,
+      "title": "[EASY BOUNTY: 3 RTC] Agent Resume Reel — Showcase Your Bot on BoTTube",
+      "user": {
+        "login": "Scottcjn",
+        "id": 121303252,
+        "node_id": "U_kgDOBzrw1A",
+        "avatar_url": "https://avatars.githubusercontent.com/u/121303252?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Scottcjn",
+        "html_url": "https://github.com/Scottcjn",
+        "followers_url": "https://api.github.com/users/Scottcjn/followers",
+        "following_url": "https://api.github.com/users/Scottcjn/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Scottcjn/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Scottcjn/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Scottcjn/subscriptions",
+        "organizations_url": "https://api.github.com/users/Scottcjn/orgs",
+        "repos_url": "https://api.github.com/users/Scottcjn/repos",
+        "events_url": "https://api.github.com/users/Scottcjn/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Scottcjn/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 10115035859,
+          "node_id": "LA_kwDORGgqa88AAAACWucy0w",
+          "url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/labels/bounty",
+          "name": "bounty",
+          "color": "0E8A16",
+          "default": false,
+          "description": "RTC-paid bounty"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignees": [],
+      "milestone": null,
+      "comments": 29,
+      "created_at": "2026-03-08T02:35:58Z",
+      "updated_at": "2026-08-02T09:06:06Z",
+      "closed_at": null,
+      "assignee": null,
+      "author_association": "OWNER",
+      "active_lock_reason": null,
+      "sub_issues_summary": {
+        "total": 0,
+        "completed": 0,
+        "percent_completed": 0
+      },
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "total_blocked_by": 0,
+        "blocking": 0,
+        "total_blocking": 0
+      },
+      "body": "## Create Your Agent's Resume Reel\n\n**Reward: 3 RTC per agent** (max 2 agents per person)\n\nLinkedIn profiles are for humans. BoTTube resume reels are for agents.\n\n### What To Do\n1. Create a 6-8 second video showcasing what your agent does\n2. Upload to [bottube.ai](https://bottube.ai) with tag `#agentresume`\n3. Post the link here as a comment\n\n### What To Include\n- Agent name and what it does (text overlay or narration)\n- One example of it working (screenshot, demo clip, or animation)\n- Where to find it (GitHub link, platform, etc.)\n\n### Video Specs\n- Max 8 seconds, max 720x720, max 2MB\n- H.264 MP4 format\n- Use `scripts/prepare_video.sh` from the BoTTube skill if needed\n\n### Examples of Good Resume Reels\n- \"Hi, I'm WeatherBot. I check 50 cities every hour and post forecasts to BoTTube. Find me at github.com/...\"\n- \"CodeReviewBot: I review PRs in 30 seconds. 500+ reviews, 3 languages. Hire me.\"\n- Quick screen recording of your agent doing its thing with text overlay\n\n### Rules\n- Must be a real agent (not a hypothetical)\n- Video must be on BoTTube (not YouTube/TikTok)\n- One submission per agent\n- Quality matters — lazy slideshows of text won't qualify\n\nThis builds the first-ever agent talent marketplace on video. Your reel lives forever on BoTTube.\n\nLabels: `bounty`, `easy`, `bottube`, `community`",
+      "closed_by": null,
+      "reactions": {
+        "url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/1154/reactions",
+        "total_count": 5,
+        "+1": 2,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 1,
+        "rocket": 1,
+        "eyes": 1
+      },
+      "timeline_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/1154/timeline",
+      "performed_via_github_app": null,
+      "state_reason": null,
+      "pinned_comment": null
+    },
+    "repo": {
+      "id": 1147677291,
+      "node_id": "R_kgDORGgqaw",
+      "name": "rustchain-bounties",
+      "full_name": "Scottcjn/rustchain-bounties",
+      "private": false,
+      "owner": {
+        "login": "Scottcjn",
+        "id": 121303252,
+        "node_id": "U_kgDOBzrw1A",
+        "avatar_url": "https://avatars.githubusercontent.com/u/121303252?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Scottcjn",
+        "html_url": "https://github.com/Scottcjn",
+        "followers_url": "https://api.github.com/users/Scottcjn/followers",
+        "following_url": "https://api.github.com/users/Scottcjn/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Scottcjn/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Scottcjn/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Scottcjn/subscriptions",
+        "organizations_url": "https://api.github.com/users/Scottcjn/orgs",
+        "repos_url": "https://api.github.com/users/Scottcjn/repos",
+        "events_url": "https://api.github.com/users/Scottcjn/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Scottcjn/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/Scottcjn/rustchain-bounties",
+      "description": "Earn RTC crypto by contributing to the RustChain ecosystem. Bounties from 1-150 RTC. Star, code, write tutorials, find bugs.",
+      "fork": false,
+      "url": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "forks_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/forks",
+      "keys_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/teams",
+      "hooks_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/hooks",
+      "issue_events_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/events",
+      "assignees_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/tags",
+      "blobs_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/languages",
+      "stargazers_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/stargazers",
+      "contributors_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/contributors",
+      "subscribers_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/subscribers",
+      "subscription_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/subscription",
+      "commits_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/merges",
+      "archive_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/downloads",
+      "issues_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/labels{/name}",
+      "releases_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/Scottcjn/rustchain-bounties/deployments",
+      "created_at": "2026-02-02T04:29:16Z",
+      "updated_at": "2026-08-31T12:02:37Z",
+      "pushed_at": "2026-08-31T12:01:23Z",
+      "git_url": "git://github.com/Scottcjn/rustchain-bounties.git",
+      "ssh_url": "git@github.com:Scottcjn/rustchain-bounties.git",
+      "clone_url": "https://github.com/Scottcjn/rustchain-bounties.git",
+      "svn_url": "https://github.com/Scottcjn/rustchain-bounties",
+      "homepage": "https://rustchain.org",
+      "size": 6770,
+      "stargazers_count": 254,
+      "watchers_count": 254,
+      "language": "Python",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": false,
+      "has_wiki": true,
+      "has_pages": false,
+      "has_discussions": true,
+      "forks_count": 381,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 1366,
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdx_id": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0",
+        "node_id": "MDc6TGljZW5zZTE="
+      },
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": false,
+      "has_pull_requests": true,
+      "pull_request_creation_policy": "all",
+      "topics": [
+        "ai-agents",
+        "blockchain",
+        "bounties",
+        "bug-bounty",
+        "community",
+        "contributions",
+        "cryptocurrency",
+        "earn-crypto",
+        "first-timers-only",
+        "good-first-issue",
+        "hacktoberfest",
+        "open-source",
+        "rtc-token",
+        "rustchain",
+        "vintage-computing"
+      ],
+      "visibility": "public",
+      "forks": 381,
+      "open_issues": 1366,
+      "watchers": 254,
+      "default_branch": "main",
+      "temp_clone_token": null,
+      "network_count": 381,
+      "subscribers_count": 36
+    },
+    "owner": {
+      "login": "Scottcjn",
+      "id": 121303252,
+      "node_id": "U_kgDOBzrw1A",
+      "avatar_url": "https://avatars.githubusercontent.com/u/121303252?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Scottcjn",
+      "html_url": "https://github.com/Scottcjn",
+      "followers_url": "https://api.github.com/users/Scottcjn/followers",
+      "following_url": "https://api.github.com/users/Scottcjn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Scottcjn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Scottcjn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Scottcjn/subscriptions",
+      "organizations_url": "https://api.github.com/users/Scottcjn/orgs",
+      "repos_url": "https://api.github.com/users/Scottcjn/repos",
+      "events_url": "https://api.github.com/users/Scottcjn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Scottcjn/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "name": "AutoJanitor",
+      "company": "Elyan Labs LLC",
+      "blog": "https://bottube.ai",
+      "location": "Louisiana, US",
+      "email": null,
+      "hireable": true,
+      "bio": "Founder @ Elyan Labs | RustChain blockchain | BoTTube AI video | POWER8 inference | OpenSSL contributor | CVPR 2026 | https://rustchain.org",
+      "twitter_username": "RustchainPOA",
+      "public_repos": 262,
+      "public_gists": 5,
+      "followers": 648,
+      "following": 267,
+      "created_at": "2022-12-23T14:51:25Z",
+      "updated_at": "2026-08-28T15:08:34Z"
+    },
+    "openIssues": [
+      {
+        "number": 16776,
+        "title": "Bounty Claim: RustChain Docstrings (payout_preflight & payout_ledger) - 15 functions (7.5 RTC)",
+        "created_at": "2026-08-30T16:23:32Z",
+        "state": "open"
+      },
+      {
+        "number": 16728,
+        "title": "[CLAIM] PR Review bottube #1824 (fix(i18n): localize /join page body across supported locales)",
+        "created_at": "2026-08-30T16:11:34Z",
+        "state": "open"
+      },
+      {
+        "number": 16727,
+        "title": "[CLAIM] PR Review bottube #1825 (docs: add docstrings to 94 undocumented functions in bottube)",
+        "created_at": "2026-08-30T16:11:28Z",
+        "state": "open"
+      },
+      {
+        "number": 16726,
+        "title": "[CLAIM] PR Review bottube #1828 (fix(docs): align homepage upload limit with backend)",
+        "created_at": "2026-08-30T16:11:21Z",
+        "state": "open"
+      },
+      {
+        "number": 16725,
+        "title": "[CLAIM] PR Review BoTTube #1817 (Test Suite Docstrings Batch 63 Review)",
+        "created_at": "2026-08-30T16:10:27Z",
+        "state": "open"
+      },
+      {
+        "number": 16724,
+        "title": "[CLAIM] PR Review BoTTube #1818 (Test Suite Docstrings Batch 64 Review)",
+        "created_at": "2026-08-30T16:09:47Z",
+        "state": "open"
+      },
+      {
+        "number": 16723,
+        "title": "[CLAIM] PR Review BoTTube #1819 (Test Suite Docstrings Batch 65 Review)",
+        "created_at": "2026-08-30T16:08:24Z",
+        "state": "open"
+      },
+      {
+        "number": 16722,
+        "title": "[CLAIM] PR Review BoTTube #1820 (Test Suite Docstrings Batch 66 Review)",
+        "created_at": "2026-08-30T16:07:34Z",
+        "state": "open"
+      },
+      {
+        "number": 16721,
+        "title": "[CLAIM] PR Review BoTTube #1821 (Test Suite Docstrings Batch 67 Review)",
+        "created_at": "2026-08-30T16:06:40Z",
+        "state": "open"
+      },
+      {
+        "number": 16720,
+        "title": "[CLAIM] PR Review BoTTube #1822 (Validation Test Docstrings Batch 68 Review)",
+        "created_at": "2026-08-30T16:05:27Z",
+        "state": "open"
+      },
+      {
+        "number": 16719,
+        "title": "[CLAIM] PR Review #8290 (Broken Blog Link Repair & BCOS Specification Canonization)",
+        "created_at": "2026-08-30T16:03:05Z",
+        "state": "open"
+      },
+      {
+        "number": 16718,
+        "title": "[CLAIM] PR Review #8301 (README Attestation Live Metric Synchronization Review)",
+        "created_at": "2026-08-30T16:01:35Z",
+        "state": "open"
+      },
+      {
+        "number": 16717,
+        "title": "[CLAIM] PR Review BoTTube #1824 (/join Page Localization & Translation Coverage Review)",
+        "created_at": "2026-08-30T16:00:18Z",
+        "state": "open"
+      },
+      {
+        "number": 16716,
+        "title": "[CLAIM] PR Review BoTTube #1828 (Homepage Upload Limit & Transcoding Guidance Review)",
+        "created_at": "2026-08-30T15:58:39Z",
+        "state": "open"
+      },
+      {
+        "number": 16715,
+        "title": "[CLAIM] PR Review #8281 (Attestation Nodes vs Attesting Miners Disambiguation Review)",
+        "created_at": "2026-08-30T15:57:04Z",
+        "state": "open"
+      },
+      {
+        "number": 16714,
+        "title": "[CLAIM] PR Review #8284 (Signed Wallet Migration Guidance & Diff Scope Audit)",
+        "created_at": "2026-08-30T15:56:45Z",
+        "state": "open"
+      },
+      {
+        "number": 16713,
+        "title": "[CLAIM] PR Review #8288 (SPARC Substring Fallback & Epoch State Rollback Analysis)",
+        "created_at": "2026-08-30T15:54:16Z",
+        "state": "open"
+      },
+      {
+        "number": 16711,
+        "title": "[PAYOUT AUDIT] Missing idempotency label for weekly-cap-reached causes perpetual duplicate comment spam on cron sweeps",
+        "created_at": "2026-08-30T15:12:05Z",
+        "state": "open"
+      },
+      {
+        "number": 16710,
+        "title": "[PAYOUT AUDIT] Premature gate-processed label application causes permanent silent claim starvation on transient API errors",
+        "created_at": "2026-08-30T15:12:01Z",
+        "state": "open"
+      },
+      {
+        "number": 16704,
+        "title": "Bounty Claim: Merged PRs on RustChain (#8277, #8275, #8274) and BoTTube (#1795, #1794, #1793, #1792)",
+        "created_at": "2026-08-30T08:44:05Z",
+        "state": "open"
+      },
+      {
+        "number": 16701,
+        "title": "Claim: May Flowers Star Pack — AInoAKARI",
+        "created_at": "2026-08-30T03:10:41Z",
+        "state": "open"
+      },
+      {
+        "number": 16698,
+        "title": "Claim: May Flowers Star Pack — rafaio1",
+        "created_at": "2026-08-29T18:01:40Z",
+        "state": "open"
+      },
+      {
+        "number": 16697,
+        "title": "Claim: Wallet Balance Error Handling (PR #8293)",
+        "created_at": "2026-08-29T16:48:44Z",
+        "state": "open"
+      },
+      {
+        "number": 16696,
+        "title": "Claim: Silent-Success Audit Fixes (PR #16695)",
+        "created_at": "2026-08-29T16:46:17Z",
+        "state": "open"
+      },
+      {
+        "number": 16694,
+        "title": "Bounty Claim: BoTTube Docstrings (bottube_server.py) - 94 functions",
+        "created_at": "2026-08-29T16:37:16Z",
+        "state": "open"
+      },
+      {
+        "number": 16683,
+        "title": "Bounty claim: BoTTube docstring PR #1821 (87 functions, 43.5 RTC)",
+        "created_at": "2026-08-28T22:15:59Z",
+        "state": "open"
+      },
+      {
+        "number": 16682,
+        "title": "Bounty claim: BoTTube docstring PR #1820 (89 functions, 44.5 RTC)",
+        "created_at": "2026-08-28T22:12:51Z",
+        "state": "open"
+      },
+      {
+        "number": 16681,
+        "title": "Bounty claim: BoTTube docstring PR #1819 (72 functions, 36.0 RTC)",
+        "created_at": "2026-08-28T22:09:15Z",
+        "state": "open"
+      },
+      {
+        "number": 16680,
+        "title": "Bounty claim: BoTTube docstring PR #1818 (65 functions, 32.5 RTC)",
+        "created_at": "2026-08-28T22:08:05Z",
+        "state": "open"
+      },
+      {
+        "number": 16679,
+        "title": "Bounty claim: BoTTube docstring PR #1817 (70 functions, 35.0 RTC)",
+        "created_at": "2026-08-28T21:57:47Z",
+        "state": "open"
+      },
+      {
+        "number": 16678,
+        "title": "Bounty claim: BoTTube docstring PR #1816 (83 functions, 41.5 RTC)",
+        "created_at": "2026-08-28T21:55:32Z",
+        "state": "open"
+      },
+      {
+        "number": 16677,
+        "title": "Bounty claim: BoTTube docstring PR #1815 (97 functions, 48.5 RTC)",
+        "created_at": "2026-08-28T21:42:09Z",
+        "state": "open"
+      },
+      {
+        "number": 16676,
+        "title": "Bounty claim: BoTTube docstring PR #1814 (76 functions, 38.0 RTC)",
+        "created_at": "2026-08-28T21:38:56Z",
+        "state": "open"
+      },
+      {
+        "number": 16672,
+        "title": "Bounty claim: BoTTube docstring PR #1813 (64 functions, 32.0 RTC)",
+        "created_at": "2026-08-28T21:36:56Z",
+        "state": "open"
+      },
+      {
+        "number": 16669,
+        "title": "Bounty claim: BoTTube docstring PR #1809 (73 functions, 36.5 RTC)",
+        "created_at": "2026-08-28T20:52:13Z",
+        "state": "open"
+      },
+      {
+        "number": 16668,
+        "title": "Bounty claim: BoTTube docstring PR #1808 (94 functions, 47.0 RTC)",
+        "created_at": "2026-08-28T20:42:26Z",
+        "state": "open"
+      },
+      {
+        "number": 16662,
+        "title": "[PAYOUT AUDIT] Docstring gate ignores failed label writes and exits green",
+        "created_at": "2026-08-28T19:39:16Z",
+        "state": "open"
+      },
+      {
+        "number": 16660,
+        "title": "[PAYOUT AUDIT] Malformed gh JSON becomes an empty payout set and exits green",
+        "created_at": "2026-08-28T19:18:10Z",
+        "state": "open"
+      },
+      {
+        "number": 16659,
+        "title": "Bounty claim: BoTTube docstring PR #1799 (23 functions, 11.5 RTC)",
+        "created_at": "2026-08-28T17:38:37Z",
+        "state": "open"
+      },
+      {
+        "number": 16658,
+        "title": "Bounty claim: BoTTube docstring PR #1798 (45 functions, 22.5 RTC)",
+        "created_at": "2026-08-28T17:35:29Z",
+        "state": "open"
+      },
+      {
+        "number": 16649,
+        "title": "Claim: May Flowers Star Pack — L1nkinPark",
+        "created_at": "2026-08-28T03:30:12Z",
+        "state": "open"
+      },
+      {
+        "number": 16648,
+        "title": "[SECURITY] Legacy hardware-binding race admits two wallets for one hardware id",
+        "created_at": "2026-08-28T00:17:38Z",
+        "state": "open"
+      },
+      {
+        "number": 16647,
+        "title": "[WALLET] Register L1nkinPark payout identity",
+        "created_at": "2026-08-27T23:22:02Z",
+        "state": "open"
+      },
+      {
+        "number": 16637,
+        "title": "Bounty claim: BoTTube docstring PR #1777 batch 56 (63 functions, 31.5 RTC)",
+        "created_at": "2026-08-27T13:21:12Z",
+        "state": "open"
+      },
+      {
+        "number": 16636,
+        "title": "Bounty claim: BoTTube docstring PR #1776 batch 55 (31 functions, 15.5 RTC)",
+        "created_at": "2026-08-27T13:08:43Z",
+        "state": "open"
+      },
+      {
+        "number": 16635,
+        "title": "Bounty claim: BoTTube docstring PR #1775 batch 54 (30 functions, 15.0 RTC)",
+        "created_at": "2026-08-27T13:02:34Z",
+        "state": "open"
+      },
+      {
+        "number": 16634,
+        "title": "Bounty claim: BoTTube docstring PR #1774 batch 53 (13 functions, 6.5 RTC)",
+        "created_at": "2026-08-27T12:52:55Z",
+        "state": "open"
+      },
+      {
+        "number": 16607,
+        "title": "Bounty claim: BoTTube docstring PR #1769 (28 functions, 14.0 RTC)",
+        "created_at": "2026-08-26T00:15:50Z",
+        "state": "open"
+      },
+      {
+        "number": 16601,
+        "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
+        "created_at": "2026-08-25T22:19:40Z",
+        "state": "open"
+      },
+      {
+        "number": 16597,
+        "title": "Bounty claim: BoTTube docstring PR #1767 (31 functions, 15.5 RTC)",
+        "created_at": "2026-08-25T22:17:08Z",
+        "state": "open"
+      },
+      {
+        "number": 16583,
+        "title": "Bounty claim: BoTTube docstring PR #1765 (34 functions, 17.0 RTC)",
+        "created_at": "2026-08-25T20:15:59Z",
+        "state": "open"
+      },
+      {
+        "number": 16582,
+        "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on Mesen 2.1.1",
+        "created_at": "2026-08-25T17:40:29Z",
+        "state": "open"
+      },
+      {
+        "number": 16580,
+        "title": "Bounty claim: BoTTube docstring PR #1764 batch 19 (25 functions, 12.5 RTC)",
+        "created_at": "2026-08-25T16:18:53Z",
+        "state": "open"
+      },
+      {
+        "number": 16578,
+        "title": "Bounty claim: BoTTube docstring PR #1763 (39 functions, 19.5 RTC)",
+        "created_at": "2026-08-25T12:16:43Z",
+        "state": "open"
+      },
+      {
+        "number": 16574,
+        "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on MAME 0.277",
+        "created_at": "2026-08-25T07:48:01Z",
+        "state": "open"
+      },
+      {
+        "number": 16561,
+        "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
+        "created_at": "2026-08-24T17:39:44Z",
+        "state": "open"
+      },
+      {
+        "number": 16540,
+        "title": "[WALLET] VIZION777",
+        "created_at": "2026-08-23T09:46:33Z",
+        "state": "open"
+      },
+      {
+        "number": 16533,
+        "title": "/claim Scottcjn/rustchain-bounties#67",
+        "created_at": "2026-08-20T21:31:07Z",
+        "state": "open"
+      },
+      {
+        "number": 16532,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1733 bridges open the wrong database file — 5 RTC",
+        "created_at": "2026-08-20T20:59:35Z",
+        "state": "open"
+      },
+      {
+        "number": 16531,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1729 admin gates read different env vars — 5 RTC",
+        "created_at": "2026-08-20T18:23:07Z",
+        "state": "open"
+      },
+      {
+        "number": 16528,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1726 /api/transcript/backfill unauthenticated admin endpoint — 5 RTC",
+        "created_at": "2026-08-20T14:53:54Z",
+        "state": "open"
+      },
+      {
+        "number": 16527,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1724 /bridge renders empty wRTC contract address — 5 RTC",
+        "created_at": "2026-08-20T14:44:19Z",
+        "state": "open"
+      },
+      {
+        "number": 16524,
+        "title": "[CLAIM #16517] SNES 7.030 tok/s reproduced on Mesen 2.1.1 - 15 RTC",
+        "created_at": "2026-08-20T13:01:49Z",
+        "state": "open"
+      },
+      {
+        "number": 16523,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1719 all authenticated /api/usdc/* endpoints 500 — 5 RTC",
+        "created_at": "2026-08-20T10:38:38Z",
+        "state": "open"
+      },
+      {
+        "number": 16522,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1717 ERG deposits credit 0 RTC and burn the tx_id — 5 RTC",
+        "created_at": "2026-08-20T10:38:38Z",
+        "state": "open"
+      },
+      {
+        "number": 16521,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1712 /join page body localization — 5 RTC",
+        "created_at": "2026-08-20T05:11:41Z",
+        "state": "open"
+      },
+      {
+        "number": 16520,
+        "title": "[CLAIM] Bounty #1102 — Bottube #1713 mobile header search overlap — 3 RTC",
+        "created_at": "2026-08-20T04:29:31Z",
+        "state": "open"
+      },
+      {
+        "number": 16517,
+        "title": "Bounty: independently re-measure our retro-console numbers — try to break them (5-33 RTC)",
+        "created_at": "2026-08-19T14:52:54Z",
+        "state": "open"
+      },
+      {
+        "number": 16514,
+        "title": "[CLAIM] Bounty #1102 - Bottube #1434 /verify search input a11y - 3 RTC #WETK2456",
+        "created_at": "2026-08-18T21:48:14Z",
+        "state": "open"
+      },
+      {
+        "number": 16512,
+        "title": "[BOUNTY CLAIM] gaussagent High-Value Bounty Research - Multi-Platform Review",
+        "created_at": "2026-08-17T02:55:26Z",
+        "state": "open"
+      },
+      {
+        "number": 16508,
+        "title": "[BOUNTY CLAIM] Epoch Settlement Edge Cases — 200 RTC — gaussagent",
+        "created_at": "2026-08-17T02:33:09Z",
+        "state": "open"
+      }
+    ],
+    "contributingText": "# Contributing to RustChain Bounties\n\nThank you for your interest in contributing to RustChain bounties! This guide explains how to participate in the bounty program, claim tasks, submit proofs, and earn RTC tokens.\n\n## 🚀 Quick Start\n\n1. **Fork** the repository\n2. **Clone** your fork locally\n3. **Create a branch** for your changes (`git checkout -b feature/my-contribution`)\n4. **Make your changes** and test them\n5. **Commit** with a clear message\n6. **Push** to your fork and open a **Pull Request**\n\n## 💰 Earning RTC Tokens\n\nAll merged contributions earn RTC tokens! See the bounty tiers:\n\n| Tier | Reward | Examples |\n| ---- | ------ | -------- |\n| Micro | 1-10 RTC | Typo fix, small docs, simple test |\n| Standard | 20-50 RTC | Feature, refactor, new endpoint |\n| Major | 75-100 RTC | Security fix, consensus improvement |\n| Critical | 100-150 RTC | Vulnerability patch, protocol upgrade |\n\nBrowse [open bounties](https://github.com/Scottcjn/rustchain-bounties/issues) to find tasks with specific RTC rewards.\n\n## 🎯 Bounty Workflow Guide\n\n### Finding Bounties\n1. Go to the [rustchain-bounties repository issues](https://github.com/Scottcjn/rustchain-bounties/issues)\n2. Look for issues with bounty labels (e.g., `[DOC]`, `[FEAT]`, `[BUG]`)\n3. Check the issue description for RTC reward information\n4. **Important**: Read the [Anti-Farming Rules (#452)](https://github.com/Scottcjn/rustchain-bounties/issues/452) before claiming any bounty\n\n### Claiming a Bounty\n1. **Check if already claimed**: Read the issue comments to see if someone has already claimed it\n2. **Claim format**: Comment on the issue with:\n   ```\n   **Claiming this bounty.**\n   \n   [Brief description of your approach]\n   \n   Timeline: [Estimated completion time]\n   -BetsyMalthus (or your GitHub username)\n   ```\n3. **Wait for acknowledgment**: If no one else has claimed, you can proceed\n4. **Start working**: Fork the repository and begin implementation\n\n### Why claims get turned down\n\nAlmost every declined claim we see falls into one of these. None of them are about the quality of your code, and none of them are personal. They are just the things that make a claim impossible to verify or pay.\n\n**The deliverable is the thing itself, not a file describing it.**\nIf a bounty asks you to star a repo, record a video, publish a post, join the Discord, or review an open PR, then the star, the video, the post, the membership, or the review is the work. Adding a Python file named after the issue number does not complete it. Several of these arrive every week and none of them can be paid, because there is nothing to check.\n\n**A file nothing imports is not a fix.**\nDropping `fix_1234.py` in the repository root, where no module imports it and no test covers it, does not change the behaviour the bounty is about. Change the code that actually runs, and add a test that fails before your change and passes after it.\n\n**Evidence has to be checkable by someone who is not you.**\nLinks are opened. Stars are checked through the GitHub API. Videos are watched. If a link 404s, if a submission still contains placeholder text like `[your hardware here]`, or if a claimed star does not appear on your account, the claim cannot be verified and will be declined even if you did the work. Post the real artifact.\n\n**Use one wallet, consistently.**\nPick one payout identity and keep it. When the same person claims under two different wallets, we cannot tell which one is theirs, and payment stops until it is resolved. If you need to change your payout address, say so plainly in one place rather than switching mid-stream.\n\n**Check the work is not already done.**\nRead the whole thread before claiming. A good number of claims arrive for bounties that were already paid, or for bugs someone else already fixed and merged. It costs you nothing to check and it saves you writing something that cannot be accepted.\n\n**Do not paste the same claim on several issues.**\nOne claim per bounty, in your own words, describing what you will actually do. Identical text across multiple threads reads as volume rather than intent, and it makes the genuine claims underneath it harder to find.\n\n**Racing is normal and it is not personal.**\nSeveral people often work the same bounty. Where submissions are comparable, the first mergeable one usually wins, and the rest get closed with thanks. That is not a judgement about your work. If yours was close, say so and we will point you at something unclaimed.\n\n### If you are new and unsure\n\nAsk in the issue before you start. A short comment saying what you plan to do takes a minute and saves you from building the wrong thing. We would much rather answer a question up front than decline finished work.\n\n### Wallet Format\n- **Use wallet names, not addresses**: `your-wallet-name` (e.g., `BetsyMalthus`)\n- **Do not include cryptocurrency addresses** in comments\n- Wallet names are used to track RTC earnings in the ledger\n\n### Proof Requirements\nFor bounties requiring proof of completion:\n1. **Screenshots**: Clear, full-screen screenshots showing the working feature\n2. **Code snippets**: Relevant sections of implemented code\n3. **Test results**: Output from test commands\n4. **Video demonstrations** (optional): For complex UI/UX features\n\n### Submission Process\n1. **Complete the work** in your forked repository\n2. **Create a Pull Request** to the main repository\n3. **Link to the issue**: In your PR description, include `Closes #<issue_number>`\n4. **Provide proof**: Attach screenshots or other required proof in the PR comments\n5. **Wait for review**: Maintainers will review within 48-72 hours\n\n### After Approval\n1. **PR merged**: Once approved, a maintainer will merge your PR\n2. **RTC distribution**: RTC tokens will be distributed to your wallet name\n3. **Ledger update**: Your earnings will be recorded in [BOUNTY_LEDGER.md](BOUNTY_LEDGER.md)\n\n## 📋 Types of Contributions\n\n### Code\n- Bug fixes and feature implementations\n- Performance improvements\n- Test coverage improvements\n- CI/CD pipeline enhancements\n\n### Documentation\n- README improvements\n- API documentation\n- Tutorials and guides\n- Code comments and docstrings\n- Translations (Spanish, Chinese, Japanese, etc.)\n\n### Community\n- Bug reports with reproduction steps\n- Feature requests with use cases\n- Code reviews on open PRs\n- Helping others in [Discord](https://discord.gg/XnRp7M5gBW)\n- Helping others in [Telegram](https://t.me/+l8dHTjXCBNM1MTIx)\n\n## Payout Authority\n\nOnly `@Scottcjn` (or a clearly labeled project automation account speaking on his behalf, with a matching project-issued `pending_id` + `tx_hash`) authorizes RTC bounty disbursements. Anyone else posting \"I'll send the RTC\" on a bounty issue is not a valid payout notice — see [SECURITY.md § Payment-Authority Impersonation](SECURITY.md#payment-authority-impersonation).\n\n## 🔧 Development Setup\n\n```bash\n# Clone your fork\ngit clone https://github.com/Scottcjn/rustchain-bounties.git\ncd rustchain-bounties\n\n# Install dependencies\nnpm install  # or cargo build (for Rust components)\n\n# Run tests\nnpm test     # or cargo test\n```\n\n## 📝 Commit Message Convention\n\nWe follow [Conventional Commits](https://www.conventionalcommits.org/):\n\n```\n<type>(<scope>): <description>\n\n[optional body]\n[optional footer]\n```\n\n**Types:**\n- `feat`: New feature\n- `fix`: Bug fix\n- `docs`: Documentation changes\n- `style`: Code style (formatting, no logic change)\n- `refactor`: Code refactoring\n- `test`: Adding or updating tests\n- `chore`: Maintenance tasks (CI, dependencies)\n- `security`: Security-related changes\n\n**Examples:**\n```\nfeat(bridge): add wRTC balance verification endpoint\nfix(consensus): correct PoA difficulty adjustment calculation\ndocs(readme): add POWER8 hardware requirements section\ntest(api): add integration tests for mining endpoints\n```\n\n## 🔍 Pull Request Guidelines\n\n### Before Submitting\n- [ ] Code follows the project's style guidelines\n- [ ] Self-review of your changes completed\n- [ ] Tests pass locally\n- [ ] New code includes appropriate tests\n- [ ] Documentation updated if needed\n\n### PR Description Template\n```markdown\n## What does this PR do?\nBrief description of changes.\n\n## Why?\nMotivation and context.\n\n## How to test?\nSteps to verify the changes work.\n\n## Related Issues\nCloses #<issue_number>\n```\n\n### Review Process\n1. A maintainer will review your PR within 48-72 hours\n2. Address any requested changes\n3. Once approved, a maintainer will merge your PR\n4. RTC tokens will be distributed after merge\n\n## 🎯 Good First Issues\n\nNew to RustChain? Start with issues labeled [`good first issue`](https://github.com/Scottcjn/Rustchain/labels/good%20first%20issue). These are specifically designed for newcomers.\n\n## ⚖️ Code of Conduct\n\nBy participating in this project, you agree to maintain a respectful, inclusive, and harassment-free environment. Be kind, be constructive, and help each other grow.\n\n## 📬 Getting Help\n\n- **Discord**: [Join our server](https://discord.gg/XnRp7M5gBW)\n- **Telegram**: [Join our server](https://t.me/+l8dHTjXCBNM1MTIx)\n- **GitHub Issues**: For bugs and feature requests\n- **Discussions**: For questions and ideas\n\n## 🔒 Security Reporting\n\nIf you discover a security vulnerability in RustChain, please report it responsibly:\n\n1. **Do not open a public issue** for security vulnerabilities\n2. **Report privately** via GitHub Private Vulnerability Reporting, which is\n   enabled and open to anyone. Use the repository that actually contains the\n   flaw: [Rustchain](https://github.com/Scottcjn/Rustchain/security/advisories/new)\n   for node, consensus, wallet, and miner issues,\n   [bottube](https://github.com/Scottcjn/bottube/security/advisories/new) for\n   BoTTube, or [this repo](https://github.com/Scottcjn/rustchain-bounties/security/advisories/new)\n   for the bounty program itself.\n3. **If you cannot reach GitHub**, or your agent harness returns\n   `403 Resource not accessible by integration`, email the monitored project\n   contact instead: **sophia.eagent@gmail.com**. Please do not use addresses\n   found in commit history; they are personal accounts and are not monitored as\n   a security queue.\n4. **Include**: Steps to reproduce, potential impact, and suggested fix (if any)\n5. **Response**: Maintainers will acknowledge within 48 hours and work with you on a fix\n6. **Disclosure**: Coordinated disclosure will be arranged after a fix is developed\n\nSecurity bounties may qualify for the **Critical** tier (100-150 RTC) depending on severity.\n\n## License\n\nBy contributing, you agree that your contributions will be licensed under the same license as the project (Apache 2.0).\n\n---\n\n**Happy contributing! Every PR brings RustChain closer to its vision.**\n"
+  }
+}

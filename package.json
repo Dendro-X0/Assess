@@ -1,0 +1,26 @@
+{
+  "name": "assess-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @assess/api dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r --filter './packages/*' build && pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "fixtures:fetch": "tsx scripts/fetch-calibration-fixtures.ts",
+    "fixtures:fetch:missing": "tsx scripts/fetch-calibration-fixtures.ts --skip-existing",
+    "calibration": "pnpm fixtures:fetch:missing && pnpm --filter @assess/scoring test src/calibration.test.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "@assess/github": "workspace:*"
+  }
+}

@@ -1,0 +1,23 @@
+url,human_verdict,notes,source_tag,expected_signals,labeled_by,labeled_at
+https://github.com/Scottcjn/rustchain-bounties/issues/16776,avoid,Bounty-board drop farm; thousands of open claim-shaped issues (bounty-doctor example class),bounty-doctor-cited,AF-01;AF-07,seed,2026-08-30
+https://github.com/Scottcjn/rustchain-bounties/issues/1154,avoid,Easy RTC crypto bounty on same farm board,bounty-doctor-cited,AF-01;AF-07,seed,2026-08-30
+https://github.com/Scottcjn/rustchain-bounties/issues/1104,avoid,Profile-setup micro bounty on farm board,bounty-doctor-cited,AF-01;AF-07,seed,2026-08-30
+https://github.com/Scottcjn/rustchain-bounties/issues/400,avoid,Season pool marketing on farm repo,bounty-doctor-cited,AF-01;AF-07,seed,2026-08-30
+https://github.com/SecureBananaLabs/bug-bounty/issues/11398,avoid,Honeypot-name pattern SecureBanana*; bulk automation bounty,bounty-hunter-pattern,AF-01;AF-02,seed,2026-08-30
+https://github.com/SecureBananaLabs/bug-bounty/issues/743,avoid,Low-handing fruit automation on honeypot-named org,bounty-hunter-pattern,AF-01,seed,2026-08-30
+https://github.com/SecureBananaLabs/bug-bounty/issues/80,avoid,Pixel art creative bounty — not engineering paid-work,bounty-hunter-pattern,AF-01;AF-07,seed,2026-08-30
+https://github.com/SecureBananaLabs/bug-bounty/issues/76,avoid,Technical poem bounty — farm/noise content,bounty-hunter-pattern,AF-01;AF-07,seed,2026-08-30
+https://github.com/SecureBananaLabs/bug-bounty/issues/30,avoid,Benchmark APIs bounty on honeypot-named lab,bounty-hunter-pattern,AF-01,seed,2026-08-30
+https://github.com/mergeos-bounties/PlantGuide/issues/18,avoid,Token-gated good-first-issue path across mergeos-bounties org,bulk-search,AF-01;AF-07,seed,2026-08-30
+https://github.com/mergeos-bounties/Loru/issues/19,avoid,Identical CONTRIBUTING good-first-issue template across org,bulk-search,AF-01;AF-07,seed,2026-08-30
+https://github.com/mergeos-bounties/Lappa/issues/52,avoid,MRG token bounty on mergeos-bounties satellite repo,bulk-search,AF-01;AF-07,seed,2026-08-30
+https://github.com/xevrion-v2/agent-playground/issues/17,avoid,Calculate PI as diamond bounty — joke/test shape,algora-label-noise,AF-02;AF-07,seed,2026-08-30
+https://github.com/outerbase/starbasedb/issues/71,proceed,Reputable product repo (1k+ stars); Vitest coverage bounty shape,stars-algora,AF-11;AF-12,seed,2026-08-30
+https://github.com/daytona/content/issues/13,caution,AI transcription bounty on content repo (120★) — verify funding before proceed,stars-algora,AF-11,seed,2026-08-30
+https://github.com/aqualinkorg/aqualink-app/issues/1020,proceed,Algora-pbc historical; established app org — use as proceed even if closed,algora-pbc-history,AF-11;AF-12,seed,2026-08-30
+https://github.com/projectdiscovery/nuclei/issues/5567,proceed,Well-known security tooling org; feature bounty class,algora-pbc-history,AF-11;AF-12,seed,2026-08-30
+https://github.com/CopilotKit/CopilotKit/issues/267,proceed,Established product; OpenAI error handling bounty,algora-pbc-history,AF-11;AF-12,seed,2026-08-30
+https://github.com/CopilotKit/CopilotKit/issues/266,proceed,Assistant API streaming; known product org,algora-pbc-history,AF-11;AF-12,seed,2026-08-30
+https://github.com/remotion-dev/remotion/issues/3061,proceed,Popular creator toolkit; fillTextBox API bounty,algora-pbc-history,AF-11;AF-12,seed,2026-08-30
+https://github.com/Cap-go/capacitor-updater/issues/255,proceed,Real bugfix with bounty label history,algora-pbc-history,AF-11;AF-12,seed,2026-08-30
+https://github.com/fluvio-community/fluvio/issues/3842,proceed,Streaming infra; python wrap bounty,algora-pbc-history,AF-11;AF-12,seed,2026-08-30

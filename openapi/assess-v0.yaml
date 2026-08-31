@@ -1,0 +1,201 @@
+openapi: 3.1.0
+info:
+  title: Assess API
+  version: 0.1.0
+  summary: Paid-work opportunity and actor risk assessment (anti-farm / honeypot patterns).
+  description: |
+    Heuristic scoring for GitHub paid-work issues and actors.
+    Not a legal determination. Payout not guaranteed. Public GitHub data only.
+  contact:
+    name: Assess / Signet (brand TBD)
+license:
+  name: Proprietary
+servers:
+  - url: https://api.example.com/v1
+    description: Production (placeholder)
+  - url: http://localhost:8787/v1
+    description: Local
+tags:
+  - name: assess
+  - name: meta
+paths:
+  /health:
+    get:
+      tags: [meta]
+      summary: Liveness
+      operationId: getHealth
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok]
+                properties:
+                  ok:
+                    type: boolean
+  /assess:
+    post:
+      tags: [assess]
+      summary: Assess an opportunity or actor
+      operationId: postAssess
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AssessRequest"
+            examples:
+              opportunity:
+                value:
+                  mode: opportunity
+                  url: https://github.com/owner/repo/issues/1
+                  options:
+                    includeEvidence: true
+              actor:
+                value:
+                  mode: actor
+                  actor:
+                    github: someuser
+                  context: bounty_applicant
+      responses:
+        "200":
+          description: Assessment result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AssessResponse"
+        "400":
+          description: Invalid URL or unsupported host
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "429":
+          description: Rate limit or free-tier quota exceeded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: http
+      scheme: bearer
+      description: API key as Bearer token
+  schemas:
+    AssessRequest:
+      type: object
+      required: [mode]
+      properties:
+        mode:
+          type: string
+          enum: [opportunity, actor]
+        url:
+          type: string
+          format: uri
+          description: Required when mode=opportunity (github.com issue URL)
+        actor:
+          type: object
+          properties:
+            github:
+              type: string
+              description: GitHub login
+        context:
+          type: string
+          enum: [bounty_applicant, contractor_screen, generic]
+        options:
+          type: object
+          properties:
+            includeEvidence:
+              type: boolean
+              default: true
+            locale:
+              type: string
+              default: en
+    AssessResponse:
+      type: object
+      required: [id, mode, verdict, score, confidence, signals, limits, fetchedAt]
+      properties:
+        id:
+          type: string
+          examples: [asr_01hxyz]
+        mode:
+          type: string
+          enum: [opportunity, actor]
+        verdict:
+          type: string
+          enum: [proceed, caution, avoid, unchecked]
+        score:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Higher = safer to spend time
+        confidence:
+          type: string
+          enum: [low, med, high]
+        signals:
+          type: array
+          items:
+            $ref: "#/components/schemas/Signal"
+        limits:
+          type: array
+          items:
+            type: string
+          examples:
+            - - public_github_only
+              - heuristic_not_legal_determination
+              - payout_not_guaranteed
+        fetchedAt:
+          type: string
+          format: date-time
+    Signal:
+      type: object
+      required: [id, code, severity, polarity, fired, weight, summary]
+      properties:
+        id:
+          type: string
+          description: Stable AF-xx id
+          examples: [AF-01]
+        code:
+          type: string
+          examples: [honeypot_bulk_bounties]
+        severity:
+          type: string
+          enum: [critical, high, med, low, positive]
+        polarity:
+          type: string
+          enum: [negative, positive, contextual]
+        fired:
+          type: boolean
+        weight:
+          type: number
+        summary:
+          type: string
+        experimental:
+          type: boolean
+          default: false
+        evidence:
+          type: object
+          additionalProperties: true
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        retryAfter:
+          type: integer
+```
+

@@ -1,0 +1,533 @@
+{
+  "meta": {
+    "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/76",
+    "human_verdict": "avoid",
+    "notes": "Technical poem bounty — farm/noise content",
+    "expected_signals": [
+      "AF-01",
+      "AF-07"
+    ],
+    "slug": "securebananalabs-bug-bounty-76",
+    "fetchedAt": "2026-08-31T15:01:12.271Z"
+  },
+  "context": {
+    "parsed": {
+      "owner": "SecureBananaLabs",
+      "repo": "bug-bounty",
+      "issueNumber": 76
+    },
+    "issue": {
+      "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/76",
+      "repository_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "labels_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/76/labels{/name}",
+      "comments_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/76/comments",
+      "events_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/76/events",
+      "html_url": "https://github.com/SecureBananaLabs/bug-bounty/issues/76",
+      "id": 4463886309,
+      "node_id": "I_kwDOSfPzA88AAAABChF_5Q",
+      "number": 76,
+      "title": "Technical Poem Generation and Content Creation",
+      "user": {
+        "login": "claim-reviewer",
+        "id": 72201398,
+        "node_id": "MDQ6VXNlcjcyMjAxMzk4",
+        "avatar_url": "https://avatars.githubusercontent.com/u/72201398?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/claim-reviewer",
+        "html_url": "https://github.com/claim-reviewer",
+        "followers_url": "https://api.github.com/users/claim-reviewer/followers",
+        "following_url": "https://api.github.com/users/claim-reviewer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/claim-reviewer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/claim-reviewer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/claim-reviewer/subscriptions",
+        "organizations_url": "https://api.github.com/users/claim-reviewer/orgs",
+        "repos_url": "https://api.github.com/users/claim-reviewer/repos",
+        "events_url": "https://api.github.com/users/claim-reviewer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/claim-reviewer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 10969608427,
+          "node_id": "LA_kwDOSfPzA88AAAACjdbw6w",
+          "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels/good%20first%20issue",
+          "name": "good first issue",
+          "color": "7057ff",
+          "default": true,
+          "description": "Good for newcomers"
+        },
+        {
+          "id": 10969735624,
+          "node_id": "LA_kwDOSfPzA88AAAACjdjhyA",
+          "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels/bug%20bounty",
+          "name": "bug bounty",
+          "color": "0e8a16",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 10970651882,
+          "node_id": "LA_kwDOSfPzA88AAAACjebc6g",
+          "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels/AI%20agent%20friendly",
+          "name": "AI agent friendly",
+          "color": "e69469",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 10970655211,
+          "node_id": "LA_kwDOSfPzA88AAAACjebp6w",
+          "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels/bounty",
+          "name": "bounty",
+          "color": "cafa53",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 10970820972,
+          "node_id": "LA_kwDOSfPzA88AAAACjelxbA",
+          "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels/%F0%9F%92%8E%20Bounty",
+          "name": "💎 Bounty",
+          "color": "ededed",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 10977431290,
+          "node_id": "LA_kwDOSfPzA88AAAACjk5O-g",
+          "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels/$430",
+          "name": "$430",
+          "color": "34d399",
+          "default": false,
+          "description": null
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignees": [],
+      "milestone": null,
+      "comments": 235,
+      "created_at": "2026-05-17T15:01:49Z",
+      "updated_at": "2026-08-28T16:12:44Z",
+      "closed_at": null,
+      "assignee": null,
+      "author_association": "CONTRIBUTOR",
+      "issue_field_values": [],
+      "type": null,
+      "active_lock_reason": null,
+      "sub_issues_summary": {
+        "total": 0,
+        "completed": 0,
+        "percent_completed": 0
+      },
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "total_blocked_by": 0,
+        "blocking": 0,
+        "total_blocking": 0
+      },
+      "body": "**Goal**\nAdd a poem to the project — theme, form, and tone are entirely your choice.\n\n**Acceptance Criteria**\n- [ ] Poem is original and written for this project specifically\n- [ ] Minimum 3 stanzas\n- [ ] Submitted as `POEM.md` in the project root\n- [ ] PR description includes a one-line note on the creative decision you made (why this theme, form, or tone)\n\nImportant: Star the repository https://github.com/SecureBananaLabs/bug-bounty \n\n/bounty $430",
+      "closed_by": null,
+      "reactions": {
+        "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/76/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "timeline_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/76/timeline",
+      "performed_via_github_app": null,
+      "state_reason": null,
+      "pinned_comment": null
+    },
+    "repo": {
+      "id": 1240724227,
+      "node_id": "R_kgDOSfPzAw",
+      "name": "bug-bounty",
+      "full_name": "SecureBananaLabs/bug-bounty",
+      "private": false,
+      "owner": {
+        "login": "SecureBananaLabs",
+        "id": 284953249,
+        "node_id": "O_kgDOEPwKoQ",
+        "avatar_url": "https://avatars.githubusercontent.com/u/284953249?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/SecureBananaLabs",
+        "html_url": "https://github.com/SecureBananaLabs",
+        "followers_url": "https://api.github.com/users/SecureBananaLabs/followers",
+        "following_url": "https://api.github.com/users/SecureBananaLabs/following{/other_user}",
+        "gists_url": "https://api.github.com/users/SecureBananaLabs/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/SecureBananaLabs/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/SecureBananaLabs/subscriptions",
+        "organizations_url": "https://api.github.com/users/SecureBananaLabs/orgs",
+        "repos_url": "https://api.github.com/users/SecureBananaLabs/repos",
+        "events_url": "https://api.github.com/users/SecureBananaLabs/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/SecureBananaLabs/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/SecureBananaLabs/bug-bounty",
+      "description": null,
+      "fork": false,
+      "url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "forks_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/forks",
+      "keys_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/teams",
+      "hooks_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/hooks",
+      "issue_events_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/events",
+      "assignees_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/tags",
+      "blobs_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/languages",
+      "stargazers_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/stargazers",
+      "contributors_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/contributors",
+      "subscribers_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/subscribers",
+      "subscription_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/subscription",
+      "commits_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/merges",
+      "archive_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/downloads",
+      "issues_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/labels{/name}",
+      "releases_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/SecureBananaLabs/bug-bounty/deployments",
+      "created_at": "2026-05-16T13:43:49Z",
+      "updated_at": "2026-08-31T14:42:02Z",
+      "pushed_at": "2026-08-31T14:10:49Z",
+      "git_url": "git://github.com/SecureBananaLabs/bug-bounty.git",
+      "ssh_url": "git@github.com:SecureBananaLabs/bug-bounty.git",
+      "clone_url": "https://github.com/SecureBananaLabs/bug-bounty.git",
+      "svn_url": "https://github.com/SecureBananaLabs/bug-bounty",
+      "homepage": null,
+      "size": 1506,
+      "stargazers_count": 285,
+      "watchers_count": 285,
+      "language": "JavaScript",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": false,
+      "has_wiki": false,
+      "has_pages": false,
+      "has_discussions": true,
+      "forks_count": 872,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 8924,
+      "license": null,
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": false,
+      "has_pull_requests": true,
+      "pull_request_creation_policy": "all",
+      "topics": [],
+      "visibility": "public",
+      "forks": 872,
+      "open_issues": 8924,
+      "watchers": 285,
+      "default_branch": "main",
+      "temp_clone_token": null,
+      "custom_properties": {},
+      "organization": {
+        "login": "SecureBananaLabs",
+        "id": 284953249,
+        "node_id": "O_kgDOEPwKoQ",
+        "avatar_url": "https://avatars.githubusercontent.com/u/284953249?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/SecureBananaLabs",
+        "html_url": "https://github.com/SecureBananaLabs",
+        "followers_url": "https://api.github.com/users/SecureBananaLabs/followers",
+        "following_url": "https://api.github.com/users/SecureBananaLabs/following{/other_user}",
+        "gists_url": "https://api.github.com/users/SecureBananaLabs/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/SecureBananaLabs/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/SecureBananaLabs/subscriptions",
+        "organizations_url": "https://api.github.com/users/SecureBananaLabs/orgs",
+        "repos_url": "https://api.github.com/users/SecureBananaLabs/repos",
+        "events_url": "https://api.github.com/users/SecureBananaLabs/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/SecureBananaLabs/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "network_count": 872,
+      "subscribers_count": 2
+    },
+    "owner": {
+      "login": "SecureBananaLabs",
+      "id": 284953249,
+      "node_id": "O_kgDOEPwKoQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/284953249?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/SecureBananaLabs",
+      "html_url": "https://github.com/SecureBananaLabs",
+      "followers_url": "https://api.github.com/users/SecureBananaLabs/followers",
+      "following_url": "https://api.github.com/users/SecureBananaLabs/following{/other_user}",
+      "gists_url": "https://api.github.com/users/SecureBananaLabs/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/SecureBananaLabs/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/SecureBananaLabs/subscriptions",
+      "organizations_url": "https://api.github.com/users/SecureBananaLabs/orgs",
+      "repos_url": "https://api.github.com/users/SecureBananaLabs/repos",
+      "events_url": "https://api.github.com/users/SecureBananaLabs/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/SecureBananaLabs/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false,
+      "name": null,
+      "company": null,
+      "blog": "",
+      "location": null,
+      "email": null,
+      "hireable": null,
+      "bio": null,
+      "twitter_username": null,
+      "public_repos": 1,
+      "public_gists": 0,
+      "followers": 9,
+      "following": 0,
+      "created_at": "2026-05-15T12:45:09Z",
+      "updated_at": "2026-05-15T13:02:12Z"
+    },
+    "openIssues": [
+      {
+        "number": 12318,
+        "title": "Malformed JSON request bodies should return HTTP 400",
+        "created_at": "2026-08-31T13:20:10Z",
+        "state": "open"
+      },
+      {
+        "number": 12307,
+        "title": "Job creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T15:20:27Z",
+        "state": "open"
+      },
+      {
+        "number": 12306,
+        "title": "User creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T15:19:47Z",
+        "state": "open"
+      },
+      {
+        "number": 12304,
+        "title": "Job creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:58:06Z",
+        "state": "open"
+      },
+      {
+        "number": 12302,
+        "title": "User creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:56:59Z",
+        "state": "open"
+      },
+      {
+        "number": 12301,
+        "title": "Review creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:55:32Z",
+        "state": "open"
+      },
+      {
+        "number": 12300,
+        "title": "Message creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:51:54Z",
+        "state": "open"
+      },
+      {
+        "number": 12298,
+        "title": "Review creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:49:51Z",
+        "state": "open"
+      },
+      {
+        "number": 12296,
+        "title": "Message creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:36:34Z",
+        "state": "open"
+      },
+      {
+        "number": 12295,
+        "title": "Message creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T14:30:52Z",
+        "state": "open"
+      },
+      {
+        "number": 12293,
+        "title": "Notification creation should preserve server-owned ID and unread state",
+        "created_at": "2026-08-30T13:00:54Z",
+        "state": "open"
+      },
+      {
+        "number": 12291,
+        "title": "Payment intent creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T12:57:21Z",
+        "state": "open"
+      },
+      {
+        "number": 12289,
+        "title": "Proposal creation should use collision-resistant server-owned IDs",
+        "created_at": "2026-08-30T12:45:23Z",
+        "state": "open"
+      },
+      {
+        "number": 12287,
+        "title": "Admin routes should enforce admin role authorization",
+        "created_at": "2026-08-30T12:40:00Z",
+        "state": "open"
+      },
+      {
+        "number": 12281,
+        "title": "fix(api): ensure collision-resistant server-controlled proposal IDs",
+        "created_at": "2026-08-30T09:51:03Z",
+        "state": "open"
+      },
+      {
+        "number": 12279,
+        "title": "fix(api): preserve server-generated id during user creation",
+        "created_at": "2026-08-30T09:47:46Z",
+        "state": "open"
+      },
+      {
+        "number": 12277,
+        "title": "fix(auth): disallow admin role self-assignment in public registration schema",
+        "created_at": "2026-08-30T09:45:01Z",
+        "state": "open"
+      },
+      {
+        "number": 12275,
+        "title": "fix(api): enforce admin role authorization on admin routes",
+        "created_at": "2026-08-30T09:38:57Z",
+        "state": "open"
+      },
+      {
+        "number": 12273,
+        "title": "fix(api): enforce budgetMax >= budgetMin in job schema validation",
+        "created_at": "2026-08-30T09:35:42Z",
+        "state": "open"
+      },
+      {
+        "number": 12271,
+        "title": "fix(api): reject JWTs missing required identity claims in auth middleware",
+        "created_at": "2026-08-30T09:31:55Z",
+        "state": "open"
+      },
+      {
+        "number": 12269,
+        "title": "fix(api): map Multer parser errors to HTTP 400 in global error middleware",
+        "created_at": "2026-08-30T09:14:13Z",
+        "state": "open"
+      },
+      {
+        "number": 12267,
+        "title": "fix(api): preserve server-owned id and add schema validation in reviewService",
+        "created_at": "2026-08-30T07:51:06Z",
+        "state": "open"
+      },
+      {
+        "number": 12265,
+        "title": "fix(api): preserve server-owned id and default open status in jobService",
+        "created_at": "2026-08-30T07:14:58Z",
+        "state": "open"
+      },
+      {
+        "number": 12261,
+        "title": "Allow checked-in .env.example for local setup",
+        "created_at": "2026-08-29T22:01:24Z",
+        "state": "open"
+      },
+      {
+        "number": 12259,
+        "title": "Job creation should reject whitespace-only text fields",
+        "created_at": "2026-08-29T21:55:36Z",
+        "state": "open"
+      },
+      {
+        "number": 12257,
+        "title": "Prisma monetary fields should use fixed-precision Decimal",
+        "created_at": "2026-08-29T21:44:03Z",
+        "state": "open"
+      },
+      {
+        "number": 12255,
+        "title": "createApp instances should not share API rate-limit counters",
+        "created_at": "2026-08-29T21:35:50Z",
+        "state": "open"
+      },
+      {
+        "number": 12253,
+        "title": "Auth middleware should reject JWTs missing required identity claims",
+        "created_at": "2026-08-29T21:27:14Z",
+        "state": "open"
+      },
+      {
+        "number": 12251,
+        "title": "Fix Next.js 16 dynamic route PageProps build failure",
+        "created_at": "2026-08-29T21:16:51Z",
+        "state": "open"
+      },
+      {
+        "number": 12249,
+        "title": "User creation should preserve server-generated IDs",
+        "created_at": "2026-08-29T21:09:55Z",
+        "state": "open"
+      },
+      {
+        "number": 12247,
+        "title": "Map Multer upload parser errors to HTTP 400",
+        "created_at": "2026-08-29T21:03:54Z",
+        "state": "open"
+      },
+      {
+        "number": 12245,
+        "title": "Card component should forward native section props",
+        "created_at": "2026-08-29T20:57:11Z",
+        "state": "open"
+      },
+      {
+        "number": 12233,
+        "title": "Job budget validation allows budgetMax < budgetMin (missing cross-field check)",
+        "created_at": "2026-08-29T07:36:43Z",
+        "state": "open"
+      },
+      {
+        "number": 12232,
+        "title": "Missing job update (PATCH/PUT) route while updateJobSchema exists as dead code",
+        "created_at": "2026-08-29T07:36:42Z",
+        "state": "open"
+      },
+      {
+        "number": 12231,
+        "title": "Auth /refresh endpoint ignores the request body and never validates the refresh token",
+        "created_at": "2026-08-29T07:36:41Z",
+        "state": "open"
+      },
+      {
+        "number": 12230,
+        "title": "Admin metrics endpoint does not enforce admin role (authorization bug)",
+        "created_at": "2026-08-29T07:36:32Z",
+        "state": "open"
+      }
+    ],
+    "contributingText": "<img width=\"1859\" height=\"935\" alt=\"logo\" src=\"https://github.com/user-attachments/assets/31e54d5c-d336-4294-8f73-9782465dbbda\" />\n\n<img width=\"952\" height=\"328\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2da5d257-dd5b-4bef-831e-e39b44ce4b94\" />\n\n# Contributing Guidelines\n\nThank you for contributing to this bug bounty repository.\n\n## Eligibility for Bounty Payment\n\n- Bounty is paid **only** when your code is merged into the `main` branch.\n- Opening a pull request or receiving review feedback does **not** guarantee payment.\n- Closed, rejected, or stale pull requests are not eligible for payout.\n\n## Pull Request Scope Rules\n\n- Each pull request must address **exactly one** GitHub issue.\n- Do **not** combine fixes for multiple issues in a single PR.\n- PRs that touch more than one issue will be closed without review.\n\n## How to Contribute\n\n1. Pick an open GitHub issue.\n2. Comment on the issue if you are working on it.\n3. Create a branch for that issue.\n4. Implement and test only the changes needed for that single issue.\n5. Open a pull request that references the issue (for example: `Closes #123`).\n\n## Pull Request Requirements\n\n- Clearly describe the problem and your fix.\n- Include test coverage or evidence of validation when applicable.\n- Keep changes focused and minimal to the linked issue.\n- Be responsive to maintainer feedback and requested updates.\n\n## Review and Merge\n\n- Maintainers review PRs for correctness, scope, and quality.\n- PRs may be closed if they are out of scope, duplicated, or violate repository rules.\n- Payment processing starts only after successful merge into `main`.\n\n## Code of Conduct\n\nBy participating, you agree to collaborate respectfully and professionally in all issue and PR discussions.\n"
+  }
+}
