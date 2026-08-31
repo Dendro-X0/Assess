@@ -10,6 +10,8 @@ export type Env = {
   databaseUrl: string;
   apiKeyPepper: string;
   devApiKey?: string;
+  polarWebhookSecret?: string;
+  polarCheckoutUrl?: string;
 };
 
 export function loadEnv(): Env {
@@ -19,5 +21,7 @@ export function loadEnv(): Env {
     databaseUrl: process.env.DATABASE_URL ?? "./data/assess.db",
     apiKeyPepper: process.env.API_KEY_PEPPER ?? "dev-pepper",
     devApiKey: process.env.DEV_API_KEY || undefined,
+    polarWebhookSecret: process.env.POLAR_WEBHOOK_SECRET || undefined,
+    polarCheckoutUrl: process.env.POLAR_CHECKOUT_URL || undefined,
   };
 }

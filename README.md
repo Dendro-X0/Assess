@@ -43,6 +43,18 @@ Create a persisted free-tier key:
 pnpm --filter @assess/api db:seed-dev-key
 ```
 
+Create a pro-tier key (for local quota testing):
+
+```bash
+pnpm --filter @assess/api db:seed-pro-key
+```
+
+Assess locally without the API server (uses cached fixture when available):
+
+```bash
+pnpm assess-local "https://github.com/Scottcjn/rustchain-bounties/issues/16776"
+```
+
 ## Packages
 
 | Package | Role |
@@ -56,15 +68,16 @@ pnpm --filter @assess/api db:seed-dev-key
 
 - `GET /v1/health`
 - `POST /v1/assess` — `opportunity` mode only
-- Core eight signals: AF-01, 02, 04, 05, 06, 07, 11, 12
-- Free-tier quota (20/mo per key; dev key bypasses DB usage)
+- `POST /v1/webhooks/polar` — Polar subscription webhooks (Pro upgrade/downgrade)
+- Core eight signals: AF-01, 02, 04, 05, 06, 07, 11, 12 (+ AF-03/08/09/10 stubs)
+- Free-tier quota (20/mo, 10 req/min per key; dev key bypasses DB usage + rate limits)
+- Pro-tier quota (500/mo, 60 req/min) via Polar webhook or `db:seed-pro-key`
 
 ## Not yet implemented
 
-- Polar Pro billing webhooks (D3)
+- Polar checkout product setup + live checkout link (D3)
 - Public docs site (D4)
 - Actor mode, batch, webhooks
-- Rate limit per minute (only monthly quota today)
 
 ## Scripts
 
@@ -72,6 +85,8 @@ pnpm --filter @assess/api db:seed-dev-key
 pnpm typecheck
 pnpm test
 pnpm build
+pnpm assess-local <github-issue-url>
+pnpm calibration
 ```
 
 ## Environment
@@ -83,6 +98,8 @@ pnpm build
 | `DATABASE_URL` | no | SQLite path, default `./data/assess.db` |
 | `API_KEY_PEPPER` | prod | Pepper for hashing stored keys |
 | `DEV_API_KEY` | dev | Bearer token accepted without DB row |
+| `POLAR_WEBHOOK_SECRET` | prod | Standard Webhooks secret for `/v1/webhooks/polar` |
+| `POLAR_CHECKOUT_URL` | prod | Polar checkout link for Pro upgrades |
 
 ## License
 

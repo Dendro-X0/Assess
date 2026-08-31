@@ -6,15 +6,15 @@ import { getPlanLimits } from "../quota.js";
 const env = loadEnv();
 const db = createDb(env);
 const token = generateApiKeyToken();
-const free = getPlanLimits("free");
+const pro = getPlanLimits("pro");
 
 db.insertApiKey({
   id: `key_${randomBytes(6).toString("hex")}`,
   keyHash: hashApiKey(token, env.apiKeyPepper),
-  plan: "free",
-  monthlyQuota: free.monthlyQuota,
-  label: "seed-free",
+  plan: "pro",
+  monthlyQuota: pro.monthlyQuota,
+  label: "seed-pro",
 });
 
-console.log("Created API key (store securely — shown once):");
+console.log("Created Pro API key (store securely — shown once):");
 console.log(token);

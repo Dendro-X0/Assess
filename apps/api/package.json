@@ -10,7 +10,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "lint": "tsc -p tsconfig.json --noEmit",
-    "db:seed-dev-key": "tsx src/scripts/seed-dev-key.ts"
+    "db:seed-dev-key": "tsx src/scripts/seed-dev-key.ts",
+    "db:seed-pro-key": "tsx src/scripts/seed-pro-key.ts"
   },
   "dependencies": {
     "@assess/github": "workspace:*",

@@ -5,6 +5,7 @@ import type { Context } from "hono";
 import { runAssessSignals } from "../allowlist.js";
 import type { AssessDb } from "../db.js";
 import type { Env } from "../env.js";
+import { getPlanLimits } from "../quota.js";
 
 type AssessRequest = {
   mode: "opportunity" | "actor";
@@ -29,6 +30,20 @@ export async function handleAssess(
   if (!key) {
     return c.json({ error: "unauthorized", message: "Invalid API key" }, 401);
   }
+
+  const rateLimit = getPlanLimits(key.plan).ratePerMinute;
+  const recentRequests = db.countRequestsLastMinute(key.id);
+  if (recentRequests >= rateLimit) {
+    return c.json(
+      {
+        error: "rate_limit_exceeded",
+        message: `Rate limit of ${rateLimit} requests per minute exceeded`,
+      },
+      429,
+    );
+  }
+
+  db.recordRateEvent(key.id);
 
   const used = db.countUsageThisMonth(key.id);
   if (used >= key.monthlyQuota) {

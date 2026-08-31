@@ -11,6 +11,12 @@ importers:
       '@assess/github':
         specifier: workspace:*
         version: link:packages/github
+      '@assess/scoring':
+        specifier: workspace:*
+        version: link:packages/scoring
+      '@assess/signals':
+        specifier: workspace:*
+        version: link:packages/signals
     devDependencies:
       dotenv:
         specifier: ^16.4.7

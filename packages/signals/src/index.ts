@@ -330,7 +330,27 @@ export function runMvpSignals(
   const af06 = detectAf06(ctx, af11);
   const af07 = detectAf07(ctx, af12);
 
-  return [af01, af02, af04, af05, af06, af07, af11, af12];
+  return [af01, af02, af04, af05, af06, af07, af11, af12, ...stubSignals()];
+}
+
+function stubSignals(): SignalResult[] {
+  const stubs = [
+    ["AF-03", "duplicate_bounty_template"],
+    ["AF-08", "suspicious_assignee_pattern"],
+    ["AF-09", "repo_metadata_anomaly"],
+    ["AF-10", "comment_spam_shape"],
+  ] as const;
+
+  return stubs.map(([id, code]) => ({
+    id,
+    code,
+    severity: "low" as const,
+    polarity: "contextual" as const,
+    fired: false,
+    weight: 0,
+    summary: "Experimental signal — not tuned in MVP.",
+    experimental: true,
+  }));
 }
 
 export function loadAllowlist(lines: string[]): Allowlist {
