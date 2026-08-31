@@ -39,6 +39,23 @@
         </p>
       </header>
 
+      <section id="try-it">
+        <h2>Try it</h2>
+        <p class="muted">Paste a public GitHub issue URL. Uses your API key from signup (this session).</p>
+        <div class="try-form card">
+          <label class="field-label" for="issue-url">GitHub issue URL</label>
+          <input
+            id="issue-url"
+            type="url"
+            placeholder="https://github.com/owner/repo/issues/1"
+            value="https://github.com/Scottcjn/rustchain-bounties/issues/16776"
+          />
+          <button id="assess-btn" class="button button-primary" type="button">Run assess</button>
+          <p id="assess-error" class="error"></p>
+          <div id="assess-result" class="assess-result"></div>
+        </div>
+      </section>
+
       <section>
         <h2>How it works</h2>
         <p>Paste a GitHub issue URL → API returns verdict + score + signals → your workflow decides.</p>
