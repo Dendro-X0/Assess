@@ -32,6 +32,8 @@ Or both together:
 pnpm dev:all
 ```
 
+If signup fails with “API not running”, stop old servers on port 8787 and restart `pnpm dev:all`. After Node upgrades, run `pnpm install` to rebuild `better-sqlite3`.
+
 Health:
 
 ```bash

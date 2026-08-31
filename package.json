@@ -13,7 +13,8 @@
     "fixtures:fetch": "tsx scripts/fetch-calibration-fixtures.ts",
     "fixtures:fetch:missing": "tsx scripts/fetch-calibration-fixtures.ts --skip-existing",
     "calibration": "pnpm fixtures:fetch:missing && pnpm --filter @assess/scoring test src/calibration.test.ts",
-    "assess-local": "tsx scripts/assess-local.ts"
+    "assess-local": "tsx scripts/assess-local.ts",
+    "postinstall": "pnpm rebuild better-sqlite3"
   },
   "engines": {
     "node": ">=20"
