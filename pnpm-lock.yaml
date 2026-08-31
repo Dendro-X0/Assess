@@ -96,9 +96,6 @@ importers:
       '@assess/github':
         specifier: workspace:*
         version: link:../github
-      '@assess/scoring':
-        specifier: workspace:*
-        version: link:../scoring
     devDependencies:
       '@types/node':
         specifier: ^22.13.10
