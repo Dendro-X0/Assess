@@ -166,7 +166,9 @@ export function detectAf05(ctx: AssessGitHubContext): SignalResult {
     /reserved for/i.test(body) ||
     /\|\s*reserved\s*\|/i.test(body) ||
     /algora.*reserved/i.test(body);
-  const fired = ctx.issue.assignees.length > 0 || reserved;
+  const openIssue = ctx.issue.state === "open";
+  const fired =
+    openIssue && (ctx.issue.assignees.length > 0 || reserved);
 
   return {
     id: "AF-05",
@@ -181,6 +183,7 @@ export function detectAf05(ctx: AssessGitHubContext): SignalResult {
     evidence: {
       assigneeCount: ctx.issue.assignees.length,
       reserved,
+      issueState: ctx.issue.state,
     },
   };
 }

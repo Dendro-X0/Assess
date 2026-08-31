@@ -3,6 +3,7 @@ import type { AssessGitHubContext } from "@assess/github";
 import {
   detectAf01,
   detectAf04,
+  detectAf05,
   loadAllowlist,
   loadDenylist,
   parseRewardUsd,
@@ -62,6 +63,30 @@ describe("signals", () => {
   it("fires AF-04 on exfil bait", () => {
     const result = detectAf04(baseContext());
     expect(result.fired).toBe(true);
+  });
+
+  it("fires AF-05 only on open issues with assignees", () => {
+    const openClaimed = detectAf05(
+      baseContext({
+        issue: {
+          ...baseContext().issue,
+          assignees: [{ login: "hunter" }],
+          state: "open",
+        },
+      }),
+    );
+    expect(openClaimed.fired).toBe(true);
+
+    const closedClaimed = detectAf05(
+      baseContext({
+        issue: {
+          ...baseContext().issue,
+          assignees: [{ login: "hunter" }],
+          state: "closed",
+        },
+      }),
+    );
+    expect(closedClaimed.fired).toBe(false);
   });
 
   it("loads allowlist entries", () => {

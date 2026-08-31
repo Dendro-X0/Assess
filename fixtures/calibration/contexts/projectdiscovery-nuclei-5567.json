@@ -1,0 +1,679 @@
+{
+  "meta": {
+    "url": "https://github.com/projectdiscovery/nuclei/issues/5567",
+    "human_verdict": "proceed",
+    "notes": "Well-known security tooling org; feature bounty class",
+    "expected_signals": [
+      "AF-11",
+      "AF-12"
+    ],
+    "slug": "projectdiscovery-nuclei-5567",
+    "fetchedAt": "2026-08-31T15:56:35.767Z"
+  },
+  "context": {
+    "parsed": {
+      "owner": "projectdiscovery",
+      "repo": "nuclei",
+      "issueNumber": 5567
+    },
+    "issue": {
+      "url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/5567",
+      "repository_url": "https://api.github.com/repos/projectdiscovery/nuclei",
+      "labels_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/5567/labels{/name}",
+      "comments_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/5567/comments",
+      "events_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/5567/events",
+      "html_url": "https://github.com/projectdiscovery/nuclei/issues/5567",
+      "id": 2485109070,
+      "node_id": "I_kwDODxGgs86UH8FO",
+      "number": 5567,
+      "title": "[FEATURE] Template Profile Improvements",
+      "user": {
+        "login": "tarunKoyalwar",
+        "id": 45962551,
+        "node_id": "MDQ6VXNlcjQ1OTYyNTUx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/45962551?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/tarunKoyalwar",
+        "html_url": "https://github.com/tarunKoyalwar",
+        "followers_url": "https://api.github.com/users/tarunKoyalwar/followers",
+        "following_url": "https://api.github.com/users/tarunKoyalwar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tarunKoyalwar/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/tarunKoyalwar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tarunKoyalwar/subscriptions",
+        "organizations_url": "https://api.github.com/users/tarunKoyalwar/orgs",
+        "repos_url": "https://api.github.com/users/tarunKoyalwar/repos",
+        "events_url": "https://api.github.com/users/tarunKoyalwar/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/tarunKoyalwar/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 2196498836,
+          "node_id": "MDU6TGFiZWwyMTk2NDk4ODM2",
+          "url": "https://api.github.com/repos/projectdiscovery/nuclei/labels/Type:%20Enhancement",
+          "name": "Type: Enhancement",
+          "color": "84b6eb",
+          "default": false,
+          "description": "Most issues will probably ask for additions or changes."
+        },
+        {
+          "id": 10118554587,
+          "node_id": "LA_kwDODxGgs88AAAACWxzj2w",
+          "url": "https://api.github.com/repos/projectdiscovery/nuclei/labels/%F0%9F%92%8E%20Bounty",
+          "name": "💎 Bounty",
+          "color": "ededed",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 10118579638,
+          "node_id": "LA_kwDODxGgs88AAAACWx1Ftg",
+          "url": "https://api.github.com/repos/projectdiscovery/nuclei/labels/$150",
+          "name": "$150",
+          "color": "34d399",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 10343314242,
+          "node_id": "LA_kwDODxGgs88AAAACaIJzQg",
+          "url": "https://api.github.com/repos/projectdiscovery/nuclei/labels/%F0%9F%92%B0%20Rewarded",
+          "name": "💰 Rewarded",
+          "color": "ededed",
+          "default": false,
+          "description": null
+        }
+      ],
+      "state": "closed",
+      "locked": false,
+      "assignees": [],
+      "milestone": null,
+      "comments": 43,
+      "created_at": "2024-08-25T07:46:54Z",
+      "updated_at": "2026-03-20T16:10:24Z",
+      "closed_at": "2026-03-20T16:10:24Z",
+      "assignee": null,
+      "author_association": "MEMBER",
+      "issue_field_values": [],
+      "type": null,
+      "active_lock_reason": null,
+      "sub_issues_summary": {
+        "total": 0,
+        "completed": 0,
+        "percent_completed": 0
+      },
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "total_blocked_by": 0,
+        "blocking": 0,
+        "total_blocking": 0
+      },
+      "body": "### Describe your feature request\n\n- template profiles or config.yaml file contains all flag config in yaml format which can be directly passed to nuclei instead of adding each flag , this way it is easy to maintain and scalable and shareable\r\n- this config file is merged with flags passed to nuclei with priority given to flags that way common / regularly used configs can be maintained and passed via config files\r\n- we should add below new features related to config or template profiles\r\n\r\n- [ ] ignore extra fields ( if we aren't already) that way info can be specified in fields like id , name , purpose yaml keys instead of commenting it out like we do in current template profiles\r\n- [ ] update goflags to allow embedding file content , this way instead of passing auth related data via a file we can embed it in goflags under `secrets` key and goflags can generate a temporary file to handle and pass it internally\n\n### Describe the use case of the feature\n\nthis will allow maintaining a single config file to be used with nuclei and users can maintain a different set of configs  specific to targets thereby keeping all config modular\r\n\r\nexample: a user who intends to vuln scan pd will have their template profile for this scan in this format\r\n\r\n```yaml\r\nname: projectdiscovery-scan\r\npurpose: Config File for Scanning\r\ndescription: single config file that contains every config related to scanning a specific target with specific templates and features\r\n\r\n# targets list file\r\nlist |\r\n  cve.projectdiscovery.io\r\n  chaos.projectdiscovery.io\r\n  ....\r\n  api.projectdiscovery.io\r\n\r\n# templates related config\r\ntype:\r\n  - http\r\n  - tcp\r\n  - javascript\r\n  - dns\r\n  - ssl\r\n\r\nexclude-tags:\r\n  - dos\r\n  - fuzz\r\n  - osint\r\n\r\n# other options\r\ntemplate-concurrency: 5\r\nhost-concurrency: 100\r\nstats: true\r\ntimeout: 30\r\n\r\nsecrets:\r\n  static:\r\n  # 4. Custom Header based auth\r\n  - type: header\r\n    domains:\r\n      - api.projectdiscovery.io\r\n      - cve.projectdiscovery.io\r\n      - chaos.projectdiscovery.io\r\n    headers:\r\n      - key: x-pdcp-key\r\n        value: <api-key-here>\r\n  dynamic:\r\n    - template: custom-oauth-flow.yaml\r\n      variables:\r\n        - name: username\r\n          value: pdteam\r\n        - name: password\r\n          value: nuclei-fuzz\r\n      type: cookie\r\n      domains:\r\n        - .*.projectdiscovery.io\r\n      headers:\r\n        - key: Authorization\r\n          value: Bearer {{token}}\r\n```\n\n### Describe alternatives you've considered\n\n_No response_\n\n### Additional context\n\n_No response_",
+      "closed_by": {
+        "login": "Mzack9999",
+        "id": 13421144,
+        "node_id": "MDQ6VXNlcjEzNDIxMTQ0",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13421144?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Mzack9999",
+        "html_url": "https://github.com/Mzack9999",
+        "followers_url": "https://api.github.com/users/Mzack9999/followers",
+        "following_url": "https://api.github.com/users/Mzack9999/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Mzack9999/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Mzack9999/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Mzack9999/subscriptions",
+        "organizations_url": "https://api.github.com/users/Mzack9999/orgs",
+        "repos_url": "https://api.github.com/users/Mzack9999/repos",
+        "events_url": "https://api.github.com/users/Mzack9999/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Mzack9999/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "reactions": {
+        "url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/5567/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "timeline_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/5567/timeline",
+      "performed_via_github_app": null,
+      "state_reason": "completed",
+      "pinned_comment": null
+    },
+    "repo": {
+      "id": 252813491,
+      "node_id": "MDEwOlJlcG9zaXRvcnkyNTI4MTM0OTE=",
+      "name": "nuclei",
+      "full_name": "projectdiscovery/nuclei",
+      "private": false,
+      "owner": {
+        "login": "projectdiscovery",
+        "id": 50994705,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjUwOTk0NzA1",
+        "avatar_url": "https://avatars.githubusercontent.com/u/50994705?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/projectdiscovery",
+        "html_url": "https://github.com/projectdiscovery",
+        "followers_url": "https://api.github.com/users/projectdiscovery/followers",
+        "following_url": "https://api.github.com/users/projectdiscovery/following{/other_user}",
+        "gists_url": "https://api.github.com/users/projectdiscovery/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/projectdiscovery/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/projectdiscovery/subscriptions",
+        "organizations_url": "https://api.github.com/users/projectdiscovery/orgs",
+        "repos_url": "https://api.github.com/users/projectdiscovery/repos",
+        "events_url": "https://api.github.com/users/projectdiscovery/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/projectdiscovery/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/projectdiscovery/nuclei",
+      "description": "Nuclei is a fast, customizable vulnerability scanner powered by the global security community and built on a simple YAML-based DSL, enabling collaboration to tackle trending vulnerabilities on the internet. It helps you find vulnerabilities in your applications, APIs, networks, DNS, and cloud configurations.",
+      "fork": false,
+      "url": "https://api.github.com/repos/projectdiscovery/nuclei",
+      "forks_url": "https://api.github.com/repos/projectdiscovery/nuclei/forks",
+      "keys_url": "https://api.github.com/repos/projectdiscovery/nuclei/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/projectdiscovery/nuclei/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/projectdiscovery/nuclei/teams",
+      "hooks_url": "https://api.github.com/repos/projectdiscovery/nuclei/hooks",
+      "issue_events_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/projectdiscovery/nuclei/events",
+      "assignees_url": "https://api.github.com/repos/projectdiscovery/nuclei/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/projectdiscovery/nuclei/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/projectdiscovery/nuclei/tags",
+      "blobs_url": "https://api.github.com/repos/projectdiscovery/nuclei/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/projectdiscovery/nuclei/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/projectdiscovery/nuclei/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/projectdiscovery/nuclei/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/projectdiscovery/nuclei/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/projectdiscovery/nuclei/languages",
+      "stargazers_url": "https://api.github.com/repos/projectdiscovery/nuclei/stargazers",
+      "contributors_url": "https://api.github.com/repos/projectdiscovery/nuclei/contributors",
+      "subscribers_url": "https://api.github.com/repos/projectdiscovery/nuclei/subscribers",
+      "subscription_url": "https://api.github.com/repos/projectdiscovery/nuclei/subscription",
+      "commits_url": "https://api.github.com/repos/projectdiscovery/nuclei/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/projectdiscovery/nuclei/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/projectdiscovery/nuclei/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/projectdiscovery/nuclei/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/projectdiscovery/nuclei/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/projectdiscovery/nuclei/merges",
+      "archive_url": "https://api.github.com/repos/projectdiscovery/nuclei/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/projectdiscovery/nuclei/downloads",
+      "issues_url": "https://api.github.com/repos/projectdiscovery/nuclei/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/projectdiscovery/nuclei/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/projectdiscovery/nuclei/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/projectdiscovery/nuclei/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/projectdiscovery/nuclei/labels{/name}",
+      "releases_url": "https://api.github.com/repos/projectdiscovery/nuclei/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/projectdiscovery/nuclei/deployments",
+      "created_at": "2020-04-03T18:47:11Z",
+      "updated_at": "2026-08-31T15:20:22Z",
+      "pushed_at": "2026-08-31T13:53:39Z",
+      "git_url": "git://github.com/projectdiscovery/nuclei.git",
+      "ssh_url": "git@github.com:projectdiscovery/nuclei.git",
+      "clone_url": "https://github.com/projectdiscovery/nuclei.git",
+      "svn_url": "https://github.com/projectdiscovery/nuclei",
+      "homepage": "https://docs.projectdiscovery.io/tools/nuclei",
+      "size": 45512,
+      "stargazers_count": 30952,
+      "watchers_count": 30952,
+      "language": "Go",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": false,
+      "has_wiki": false,
+      "has_pages": false,
+      "has_discussions": true,
+      "forks_count": 3851,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 105,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": false,
+      "has_pull_requests": true,
+      "pull_request_creation_policy": "all",
+      "topics": [
+        "attack-surface",
+        "cve-scanner",
+        "dast",
+        "hacktoberfest",
+        "nuclei-engine",
+        "security",
+        "security-scanner",
+        "subdomain-takeover",
+        "vulnerability-assessment",
+        "vulnerability-detection",
+        "vulnerability-scanner"
+      ],
+      "visibility": "public",
+      "forks": 3851,
+      "open_issues": 105,
+      "watchers": 30952,
+      "default_branch": "dev",
+      "temp_clone_token": null,
+      "custom_properties": {},
+      "organization": {
+        "login": "projectdiscovery",
+        "id": 50994705,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjUwOTk0NzA1",
+        "avatar_url": "https://avatars.githubusercontent.com/u/50994705?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/projectdiscovery",
+        "html_url": "https://github.com/projectdiscovery",
+        "followers_url": "https://api.github.com/users/projectdiscovery/followers",
+        "following_url": "https://api.github.com/users/projectdiscovery/following{/other_user}",
+        "gists_url": "https://api.github.com/users/projectdiscovery/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/projectdiscovery/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/projectdiscovery/subscriptions",
+        "organizations_url": "https://api.github.com/users/projectdiscovery/orgs",
+        "repos_url": "https://api.github.com/users/projectdiscovery/repos",
+        "events_url": "https://api.github.com/users/projectdiscovery/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/projectdiscovery/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "network_count": 3851,
+      "subscribers_count": 292
+    },
+    "owner": {
+      "login": "projectdiscovery",
+      "id": 50994705,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjUwOTk0NzA1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50994705?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/projectdiscovery",
+      "html_url": "https://github.com/projectdiscovery",
+      "followers_url": "https://api.github.com/users/projectdiscovery/followers",
+      "following_url": "https://api.github.com/users/projectdiscovery/following{/other_user}",
+      "gists_url": "https://api.github.com/users/projectdiscovery/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/projectdiscovery/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/projectdiscovery/subscriptions",
+      "organizations_url": "https://api.github.com/users/projectdiscovery/orgs",
+      "repos_url": "https://api.github.com/users/projectdiscovery/repos",
+      "events_url": "https://api.github.com/users/projectdiscovery/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/projectdiscovery/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false,
+      "name": "ProjectDiscovery",
+      "company": null,
+      "blog": "https://projectdiscovery.io/",
+      "location": null,
+      "email": "contact@projectdiscovery.io",
+      "hireable": null,
+      "bio": "Monitor your infrastructure. Real vulnerabilities. Zero noise.",
+      "twitter_username": "pdiscoveryio",
+      "public_repos": 123,
+      "public_gists": 0,
+      "followers": 11880,
+      "following": 0,
+      "created_at": "2019-05-24T14:33:32Z",
+      "updated_at": "2026-08-18T07:17:48Z"
+    },
+    "openIssues": [
+      {
+        "number": 7672,
+        "title": "[BUG] There is a format exception issue with YAML",
+        "created_at": "2026-08-22T11:08:10Z",
+        "state": "open"
+      },
+      {
+        "number": 7670,
+        "title": "[BUG] disable-cookie / cookie-reuse: false do not prevent shared cookie jar from attaching session cookies (v3.11.0)",
+        "created_at": "2026-08-20T12:42:50Z",
+        "state": "open"
+      },
+      {
+        "number": 7665,
+        "title": "http: expose negotiated TLS key exchange in DSL metadata",
+        "created_at": "2026-08-17T07:11:10Z",
+        "state": "open"
+      },
+      {
+        "number": 7663,
+        "title": "[BUG] Nuclei template signature bypass: mtime-only metadata cache runs unsigned code templates",
+        "created_at": "2026-08-17T00:15:05Z",
+        "state": "open"
+      },
+      {
+        "number": 7651,
+        "title": "[BUG] ...nuclei (Windows)  [ERR] Could not parse nuclei-ignore file: yaml: line 59: mapping values are not allowed in this context",
+        "created_at": "2026-08-10T18:07:41Z",
+        "state": "open"
+      },
+      {
+        "number": 7639,
+        "title": "[BUG] Dynamic Auth deadlock when login endpoint is on the same domain as scan target (sync.Once re-entry in PR #6976)",
+        "created_at": "2026-08-06T11:13:41Z",
+        "state": "open"
+      },
+      {
+        "number": 7638,
+        "title": "-lfa (allow-local-file-access) is a process-wide switch that grants every template — including remote URL templates — arbitrary local file reads",
+        "created_at": "2026-08-06T05:27:23Z",
+        "state": "open"
+      },
+      {
+        "number": 7630,
+        "title": "[BUG] Fatal runtime fault (access violation 0xc0000005) crashes nuclei daily during concurrent scans on Windows Server 2025",
+        "created_at": "2026-07-31T12:51:31Z",
+        "state": "open"
+      },
+      {
+        "number": 7617,
+        "title": "Evaluate DSL helper expressions in -H header values per request",
+        "created_at": "2026-07-27T21:02:10Z",
+        "state": "open"
+      },
+      {
+        "number": 7611,
+        "title": "[BUG] regex extractor group beyond the pattern capture count silently extracts nothing",
+        "created_at": "2026-07-26T14:45:32Z",
+        "state": "open"
+      },
+      {
+        "number": 7610,
+        "title": "Track exact-basename matching for known template configuration files",
+        "created_at": "2026-07-26T09:54:42Z",
+        "state": "open"
+      },
+      {
+        "number": 7604,
+        "title": "[BUG] Matchers/extractors with no values compile and run, silently never matching",
+        "created_at": "2026-07-26T00:21:24Z",
+        "state": "open"
+      },
+      {
+        "number": 7548,
+        "title": "Add katana input",
+        "created_at": "2026-07-15T14:51:33Z",
+        "state": "open"
+      },
+      {
+        "number": 7543,
+        "title": "[BUG] httpx Request statistics",
+        "created_at": "2026-07-14T10:56:26Z",
+        "state": "open"
+      },
+      {
+        "number": 7526,
+        "title": "code/JS protocols can reach host filesystem and network without confinement",
+        "created_at": "2026-07-05T23:46:33Z",
+        "state": "open"
+      },
+      {
+        "number": 7505,
+        "title": "confidence scoring",
+        "created_at": "2026-06-25T23:44:53Z",
+        "state": "open"
+      },
+      {
+        "number": 7437,
+        "title": "Add local HTTP(S) callback listener mode for offline/internal OAST detection",
+        "created_at": "2026-06-01T00:54:39Z",
+        "state": "open"
+      },
+      {
+        "number": 7387,
+        "title": "[RFC] Raw HTTP Response Body Access for Compressed Responses",
+        "created_at": "2026-05-10T10:16:05Z",
+        "state": "open"
+      },
+      {
+        "number": 7386,
+        "title": "[RFC] Template Target Resolution Consolidation",
+        "created_at": "2026-05-08T23:51:43Z",
+        "state": "open"
+      },
+      {
+        "number": 7313,
+        "title": "[BUG] SARIF export fails validation",
+        "created_at": "2026-03-31T08:23:05Z",
+        "state": "open"
+      },
+      {
+        "number": 6755,
+        "title": "[PROPOSAL] Cascading Configuration Hierarchy (user config vs. system-wide vs. `-config`)",
+        "created_at": "2026-01-06T01:28:26Z",
+        "state": "open"
+      },
+      {
+        "number": 6725,
+        "title": "[FEATURE] RFC 9111 Compliant HTTP Response Caching",
+        "created_at": "2025-12-20T15:08:41Z",
+        "state": "open"
+      },
+      {
+        "number": 6651,
+        "title": "[Feature Request] Add a flag (e.g., -strict-probe) to stop scanning if internal httpx probe fails (No Fallback)",
+        "created_at": "2025-12-03T04:37:22Z",
+        "state": "open"
+      },
+      {
+        "number": 6447,
+        "title": "JS function for advanced auth with options",
+        "created_at": "2025-09-01T09:31:16Z",
+        "state": "open"
+      },
+      {
+        "number": 6331,
+        "title": "[MAINTENANCE] Replace `sonic` with `encoding/json/v2`",
+        "created_at": "2025-07-17T17:39:58Z",
+        "state": "open"
+      },
+      {
+        "number": 6304,
+        "title": "[FEATURE] Disable automatic response decompression",
+        "created_at": "2025-07-06T10:31:03Z",
+        "state": "open"
+      },
+      {
+        "number": 6336,
+        "title": "[TEMPLATE REQUEST] Wappalyzer based tech detection using wappalyzergo",
+        "created_at": "2025-06-19T13:22:09Z",
+        "state": "open"
+      },
+      {
+        "number": 6142,
+        "title": "[FEATURE] Run FIle protocol over smb network",
+        "created_at": "2025-04-03T04:26:32Z",
+        "state": "open"
+      },
+      {
+        "number": 5839,
+        "title": "Heuristics based change analyzer",
+        "created_at": "2024-11-19T06:19:47Z",
+        "state": "open"
+      },
+      {
+        "number": 5717,
+        "title": "[FEATURE] graphql fuzzing support with dast templates",
+        "created_at": "2024-10-10T09:50:55Z",
+        "state": "open"
+      },
+      {
+        "number": 5711,
+        "title": "global variables `{{RDN}}`, `{{FQDN}}` input support with `-iserver` option",
+        "created_at": "2024-10-09T14:18:01Z",
+        "state": "open"
+      },
+      {
+        "number": 5649,
+        "title": "[FEATURE] Add ServiceNow issue tracker support for reporting",
+        "created_at": "2024-09-19T14:24:17Z",
+        "state": "open"
+      },
+      {
+        "number": 5624,
+        "title": "[FEATURE] PDCP Login on first run",
+        "created_at": "2024-09-10T20:08:41Z",
+        "state": "open"
+      },
+      {
+        "number": 5612,
+        "title": "[FEATURE] pdcp template sync support",
+        "created_at": "2024-09-06T18:34:52Z",
+        "state": "open"
+      },
+      {
+        "number": 5608,
+        "title": "[FEATURE] Rolling template release update support",
+        "created_at": "2024-09-05T19:16:01Z",
+        "state": "open"
+      },
+      {
+        "number": 5566,
+        "title": "[FEATURE] Add Integrations or providers for Secrets File",
+        "created_at": "2024-08-25T07:22:07Z",
+        "state": "open"
+      },
+      {
+        "number": 5565,
+        "title": "[FEATURE] Support Tamper Scripts via Javascript using passive templates",
+        "created_at": "2024-08-25T07:05:22Z",
+        "state": "open"
+      },
+      {
+        "number": 5495,
+        "title": "Inconvenient path parameters fuzzing",
+        "created_at": "2024-08-06T12:13:48Z",
+        "state": "open"
+      },
+      {
+        "number": 5439,
+        "title": "Feature Request: Support for HTTP 2+ single-packet attacks",
+        "created_at": "2024-07-23T10:18:55Z",
+        "state": "open"
+      },
+      {
+        "number": 5402,
+        "title": "Add `file` helper function to help import static payloads from files",
+        "created_at": "2024-07-13T14:47:40Z",
+        "state": "open"
+      },
+      {
+        "number": 5353,
+        "title": "Support Multiple events generation using operators",
+        "created_at": "2024-07-02T19:37:05Z",
+        "state": "open"
+      },
+      {
+        "number": 5269,
+        "title": "introduce 'service' field/input in network/javascript templates",
+        "created_at": "2024-06-06T06:57:19Z",
+        "state": "open"
+      },
+      {
+        "number": 5069,
+        "title": "Add more OpenAPI security schemes like oauth2 etc",
+        "created_at": "2024-04-18T16:34:14Z",
+        "state": "open"
+      },
+      {
+        "number": 5061,
+        "title": "Per template customisation of interactsh timers/timeouts",
+        "created_at": "2024-04-17T11:06:28Z",
+        "state": "open"
+      },
+      {
+        "number": 5015,
+        "title": "Support Concurrency when executing conditional requests with payloads",
+        "created_at": "2024-04-08T12:13:25Z",
+        "state": "open"
+      },
+      {
+        "number": 4996,
+        "title": "Implement unit tests for nuclei templates validation",
+        "created_at": "2024-04-05T10:26:03Z",
+        "state": "open"
+      },
+      {
+        "number": 4962,
+        "title": "url deduping for fuzzing",
+        "created_at": "2024-03-29T18:37:23Z",
+        "state": "open"
+      },
+      {
+        "number": 4953,
+        "title": "Support / add `proxy-server` input mode to fuzz / run checks on live traffic",
+        "created_at": "2024-03-28T13:32:02Z",
+        "state": "open"
+      },
+      {
+        "number": 4950,
+        "title": "Improve Nuclei YAML template JsonSchema",
+        "created_at": "2024-03-27T18:36:47Z",
+        "state": "open"
+      },
+      {
+        "number": 4934,
+        "title": "Adds support for input adapted to different goals",
+        "created_at": "2024-03-24T13:09:40Z",
+        "state": "open"
+      },
+      {
+        "number": 4843,
+        "title": "Setup Automation to update default ignore list of headers,cookies for fuzzing",
+        "created_at": "2024-03-07T08:17:15Z",
+        "state": "open"
+      },
+      {
+        "number": 4808,
+        "title": "Scan Planner",
+        "created_at": "2024-02-26T11:51:40Z",
+        "state": "open"
+      },
+      {
+        "number": 4793,
+        "title": "Complete support for Auth Protected Targets",
+        "created_at": "2024-02-22T19:41:47Z",
+        "state": "open"
+      },
+      {
+        "number": 4791,
+        "title": "Add a generic javascript sql module and deprecate mysql,mssql,postgres",
+        "created_at": "2024-02-22T18:36:42Z",
+        "state": "open"
+      },
+      {
+        "number": 4778,
+        "title": "Add PDCP checks to -hc",
+        "created_at": "2024-02-20T15:32:41Z",
+        "state": "open"
+      },
+      {
+        "number": 4703,
+        "title": "Extended Memory Usage Optimizations",
+        "created_at": "2024-01-30T15:44:06Z",
+        "state": "open"
+      },
+      {
+        "number": 4631,
+        "title": "Refactor and move all variables to ScanContext",
+        "created_at": "2024-01-12T22:29:51Z",
+        "state": "open"
+      }
+    ],
+    "contributingText": "# Contributing to ProjectDiscovery/Nuclei\n\nWe appreciate your interest in contributing to the projectdiscovery/nuclei! This document provides some basic guidelines for contributors.\n\n## Getting Started\n\n- Always base your work from the `dev` branch, which is the development branch with the latest code.\n- Before creating a Pull Request (PR), make sure there is a corresponding issue for your contribution. If there isn't one already, please create one.\n- Include the problem description in the issue.\n\n## Pull Requests\n\nWhen creating a PR, please follow these guidelines:\n\n- Link your PR to the corresponding issue.\n- Provide context in the PR description to help reviewers understand the changes. The more information you provide, the faster the review process will be.\n- Include an example of running the tool with the changed code, if applicable. Provide 'before' and 'after' examples if possible.\n- Include steps for functional testing or replication.\n- If you're adding a new feature, make sure to include unit tests.\n\n## Code Style\n\nPlease adhere to the existing coding style for consistency.\n\n## Development\n\nTo ensure your changes work as expected and strictly adhere to the project's standards, please run the following commands before submitting a PR:\n\n- **Run tests**:\n  ```sh\n  make test\n  ```\n\n- **Run linters/vet**:\n  ```sh\n  make vet\n  ```\n\n- **Build the project**:\n  ```sh\n  make build\n  ``` \n\n## Questions\n\nIf you have any questions or need further guidance, please feel free to ask in the issue or PR, or [reach out to the maintainers](https://discord.gg/projectdiscovery).\n\nThank you for your contribution!\n\n"
+  }
+}

@@ -1,0 +1,884 @@
+{
+  "meta": {
+    "url": "https://github.com/remotion-dev/remotion/issues/3061",
+    "human_verdict": "proceed",
+    "notes": "Popular creator toolkit; fillTextBox API bounty",
+    "expected_signals": [
+      "AF-11",
+      "AF-12"
+    ],
+    "slug": "remotion-dev-remotion-3061",
+    "fetchedAt": "2026-08-31T15:56:43.952Z"
+  },
+  "context": {
+    "parsed": {
+      "owner": "remotion-dev",
+      "repo": "remotion",
+      "issueNumber": 3061
+    },
+    "issue": {
+      "url": "https://api.github.com/repos/remotion-dev/remotion/issues/3061",
+      "repository_url": "https://api.github.com/repos/remotion-dev/remotion",
+      "labels_url": "https://api.github.com/repos/remotion-dev/remotion/issues/3061/labels{/name}",
+      "comments_url": "https://api.github.com/repos/remotion-dev/remotion/issues/3061/comments",
+      "events_url": "https://api.github.com/repos/remotion-dev/remotion/issues/3061/events",
+      "html_url": "https://github.com/remotion-dev/remotion/issues/3061",
+      "id": 1958936595,
+      "node_id": "I_kwDOEFx3wc50wwAT",
+      "number": 3061,
+      "title": "Add a `fillTextBox()` API to `@remotion/layout-utils`",
+      "user": {
+        "login": "JonnyBurger",
+        "id": 1629785,
+        "node_id": "MDQ6VXNlcjE2Mjk3ODU=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1629785?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/JonnyBurger",
+        "html_url": "https://github.com/JonnyBurger",
+        "followers_url": "https://api.github.com/users/JonnyBurger/followers",
+        "following_url": "https://api.github.com/users/JonnyBurger/following{/other_user}",
+        "gists_url": "https://api.github.com/users/JonnyBurger/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/JonnyBurger/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/JonnyBurger/subscriptions",
+        "organizations_url": "https://api.github.com/users/JonnyBurger/orgs",
+        "repos_url": "https://api.github.com/users/JonnyBurger/repos",
+        "events_url": "https://api.github.com/users/JonnyBurger/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/JonnyBurger/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 4828916185,
+          "node_id": "LA_kwDOEFx3wc8AAAABH9Np2Q",
+          "url": "https://api.github.com/repos/remotion-dev/remotion/labels/%F0%9F%92%8E%20Bounty",
+          "name": "💎 Bounty",
+          "color": "4f46e5",
+          "default": false,
+          "description": null
+        }
+      ],
+      "state": "closed",
+      "locked": false,
+      "assignees": [
+        {
+          "login": "jkcs",
+          "id": 38372737,
+          "node_id": "MDQ6VXNlcjM4MzcyNzM3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/38372737?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jkcs",
+          "html_url": "https://github.com/jkcs",
+          "followers_url": "https://api.github.com/users/jkcs/followers",
+          "following_url": "https://api.github.com/users/jkcs/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jkcs/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jkcs/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jkcs/subscriptions",
+          "organizations_url": "https://api.github.com/users/jkcs/orgs",
+          "repos_url": "https://api.github.com/users/jkcs/repos",
+          "events_url": "https://api.github.com/users/jkcs/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jkcs/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        }
+      ],
+      "milestone": null,
+      "comments": 20,
+      "created_at": "2023-10-24T10:16:21Z",
+      "updated_at": "2023-10-31T18:48:41Z",
+      "closed_at": "2023-10-26T09:19:59Z",
+      "assignee": {
+        "login": "jkcs",
+        "id": 38372737,
+        "node_id": "MDQ6VXNlcjM4MzcyNzM3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/38372737?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/jkcs",
+        "html_url": "https://github.com/jkcs",
+        "followers_url": "https://api.github.com/users/jkcs/followers",
+        "following_url": "https://api.github.com/users/jkcs/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jkcs/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jkcs/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jkcs/subscriptions",
+        "organizations_url": "https://api.github.com/users/jkcs/orgs",
+        "repos_url": "https://api.github.com/users/jkcs/repos",
+        "events_url": "https://api.github.com/users/jkcs/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jkcs/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "author_association": "MEMBER",
+      "issue_field_values": [],
+      "type": null,
+      "active_lock_reason": null,
+      "sub_issues_summary": {
+        "total": 0,
+        "completed": 0,
+        "percent_completed": 0
+      },
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "total_blocked_by": 0,
+        "blocking": 0,
+        "total_blocking": 0
+      },
+      "body": "## Use Case\r\n\r\nI have written this function:\r\n\r\n```tsx\r\nimport { measureText } from \"@remotion/layout-utils\";\r\n\r\ntype Word = {\r\n  text: string;\r\n  fontFamily: string;\r\n  fontWeight: string | number;\r\n  fontSize: number;\r\n};\r\n\r\nexport const fillTextBox = ({\r\n  maxBoxWidth,\r\n  maxLines,\r\n}: {\r\n  maxBoxWidth: number;\r\n  maxLines: number;\r\n}) => {\r\n  const lines: Word[][] = new Array(maxLines).fill(0).map(() => [] as Word[]);\r\n\r\n  return {\r\n    add: ({\r\n      text,\r\n      fontFamily,\r\n      fontWeight,\r\n      fontSize,\r\n    }: {\r\n      text: string;\r\n      fontFamily: string;\r\n      fontWeight: string | number;\r\n      fontSize: number;\r\n    }): {\r\n      exceedsBox: boolean;\r\n      newLine: boolean;\r\n    } => {\r\n      const lastLineIndex = lines.findLastIndex((l) => l.length > 0);\r\n      const currentlyAt = lastLineIndex === -1 ? 0 : lastLineIndex;\r\n      const lineToUse = lines[currentlyAt];\r\n\r\n      const lineWithWord: Word[] = [\r\n        ...lineToUse,\r\n        { text, fontFamily, fontWeight, fontSize },\r\n      ];\r\n\r\n      const widths = lineWithWord.map((w) => {\r\n        return measureWordWidth(w);\r\n      });\r\n      const lineWidthWithWordAdded = widths.reduce((a, b) => a + b, 0);\r\n\r\n      if (lineWidthWithWordAdded <= maxBoxWidth) {\r\n        lines[currentlyAt].push({\r\n          text: lines[currentlyAt].length === 0 ? text.trimStart() : text,\r\n          fontFamily,\r\n          fontWeight,\r\n          fontSize,\r\n        });\r\n\r\n        return { exceedsBox: false, newLine: false };\r\n      }\r\n\r\n      if (currentlyAt === maxLines - 1) {\r\n        return { exceedsBox: true, newLine: false };\r\n      }\r\n\r\n      lines[currentlyAt + 1] = [\r\n        { text: text.trimStart(), fontFamily, fontWeight, fontSize },\r\n      ];\r\n      return { exceedsBox: false, newLine: true };\r\n    },\r\n  };\r\n};\r\n```\r\n\r\nApproximate usage (simplified)\r\n\r\n```tsx\r\nconst box = fillTextBox({maxLines: 4, maxBoxWidth: 100})\r\nbox.add({text: 'Hello'}) // {exceedsBox: false, newLine: false}\r\nbox.add({text: 'World!'}) // {exceedsBox: false, newLine: false}\r\n// Doesn't fit on the previous line anymore\r\nbox.add({text: 'How'}) // {exceedsBox: false, newLine: true}\r\n// ...\r\n// Doesn't fix in the box anymore\r\nbox.add({text: 'the end'}) // {exceedsBox: true, newLine: false}\r\n```\r\n\r\nThis function measures if text fits in a box, and everytime you add a word it tells you if it leads to a line break and if the text still fits in the box or if it overflows\r\n\r\n## Acceptance criteria\r\n\r\n- Make this an API and add it to `@remotion/layout-utils`\r\n- Add a documentation page with a typesafe `twoslash` example, options, minimum Remotion version, brief description of the API\r\n- Add it to the sidebar and table of contents for layout-utils\r\n- In the `packages/example` testbed, add a very simple composition that uses the API so that we can test for regressions in the future\r\n\r\n## Resources\r\n\r\nHow the layout-utils package and the first API got shipped:\r\nhttps://github.com/remotion-dev/remotion/pull/3036\r\n\r\n## Bounty\r\n💎 This issue is part of Hacktoberfest and has a bounty on it!\r\n- **General Rules**: https://www.remotion.dev/bounties\r\n- **How to contribute**: https://www.remotion.dev/docs/contributing/\r\n- **Implementing a new feature**: https://www.remotion.dev/docs/contributing/feature\r\n- **Implementing a new option**: https://www.remotion.dev/docs/contributing/option\r\n- **Write documentation**: https://www.remotion.dev/docs/contributing/docs\r\n\r\n🎃 **Hacktoberfest rules**\r\n- You can only work on 1 issue at a time.\r\n- Only 1 person can work on the same issue.\r\n- We explicitly assign a developer. Don’t work on an issue if we do not assign you.\r\n- First-time contributors will get preferential treatment.\r\n- Only take an issue if you have an approximate idea on how to solve the issue.\r\n- You must set up the Remotion repository locally and test your changes. [Contributing to Remotion](https://www.remotion.dev/docs/contributing)\r\n- Your PR must fulfill the acceptance criteria.\r\n- If you use AI, you must verify that the output is correct.\r\n- All tests (functionality and formatting) must pass.\r\n\r\nIssue already taken? Find more issues under https://remotion.dev/bounties\r\n\r\n/bounty 200",
+      "closed_by": {
+        "login": "JonnyBurger",
+        "id": 1629785,
+        "node_id": "MDQ6VXNlcjE2Mjk3ODU=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1629785?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/JonnyBurger",
+        "html_url": "https://github.com/JonnyBurger",
+        "followers_url": "https://api.github.com/users/JonnyBurger/followers",
+        "following_url": "https://api.github.com/users/JonnyBurger/following{/other_user}",
+        "gists_url": "https://api.github.com/users/JonnyBurger/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/JonnyBurger/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/JonnyBurger/subscriptions",
+        "organizations_url": "https://api.github.com/users/JonnyBurger/orgs",
+        "repos_url": "https://api.github.com/users/JonnyBurger/repos",
+        "events_url": "https://api.github.com/users/JonnyBurger/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/JonnyBurger/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "reactions": {
+        "url": "https://api.github.com/repos/remotion-dev/remotion/issues/3061/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "timeline_url": "https://api.github.com/repos/remotion-dev/remotion/issues/3061/timeline",
+      "performed_via_github_app": null,
+      "state_reason": "completed",
+      "pinned_comment": null
+    },
+    "repo": {
+      "id": 274495425,
+      "node_id": "MDEwOlJlcG9zaXRvcnkyNzQ0OTU0MjU=",
+      "name": "remotion",
+      "full_name": "remotion-dev/remotion",
+      "private": false,
+      "owner": {
+        "login": "remotion-dev",
+        "id": 85344006,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjg1MzQ0MDA2",
+        "avatar_url": "https://avatars.githubusercontent.com/u/85344006?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/remotion-dev",
+        "html_url": "https://github.com/remotion-dev",
+        "followers_url": "https://api.github.com/users/remotion-dev/followers",
+        "following_url": "https://api.github.com/users/remotion-dev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/remotion-dev/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/remotion-dev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/remotion-dev/subscriptions",
+        "organizations_url": "https://api.github.com/users/remotion-dev/orgs",
+        "repos_url": "https://api.github.com/users/remotion-dev/repos",
+        "events_url": "https://api.github.com/users/remotion-dev/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/remotion-dev/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/remotion-dev/remotion",
+      "description": "🎥      Make videos programmatically with React",
+      "fork": false,
+      "url": "https://api.github.com/repos/remotion-dev/remotion",
+      "forks_url": "https://api.github.com/repos/remotion-dev/remotion/forks",
+      "keys_url": "https://api.github.com/repos/remotion-dev/remotion/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/remotion-dev/remotion/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/remotion-dev/remotion/teams",
+      "hooks_url": "https://api.github.com/repos/remotion-dev/remotion/hooks",
+      "issue_events_url": "https://api.github.com/repos/remotion-dev/remotion/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/remotion-dev/remotion/events",
+      "assignees_url": "https://api.github.com/repos/remotion-dev/remotion/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/remotion-dev/remotion/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/remotion-dev/remotion/tags",
+      "blobs_url": "https://api.github.com/repos/remotion-dev/remotion/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/remotion-dev/remotion/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/remotion-dev/remotion/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/remotion-dev/remotion/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/remotion-dev/remotion/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/remotion-dev/remotion/languages",
+      "stargazers_url": "https://api.github.com/repos/remotion-dev/remotion/stargazers",
+      "contributors_url": "https://api.github.com/repos/remotion-dev/remotion/contributors",
+      "subscribers_url": "https://api.github.com/repos/remotion-dev/remotion/subscribers",
+      "subscription_url": "https://api.github.com/repos/remotion-dev/remotion/subscription",
+      "commits_url": "https://api.github.com/repos/remotion-dev/remotion/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/remotion-dev/remotion/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/remotion-dev/remotion/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/remotion-dev/remotion/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/remotion-dev/remotion/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/remotion-dev/remotion/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/remotion-dev/remotion/merges",
+      "archive_url": "https://api.github.com/repos/remotion-dev/remotion/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/remotion-dev/remotion/downloads",
+      "issues_url": "https://api.github.com/repos/remotion-dev/remotion/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/remotion-dev/remotion/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/remotion-dev/remotion/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/remotion-dev/remotion/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/remotion-dev/remotion/labels{/name}",
+      "releases_url": "https://api.github.com/repos/remotion-dev/remotion/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/remotion-dev/remotion/deployments",
+      "created_at": "2020-06-23T19:49:10Z",
+      "updated_at": "2026-08-31T15:42:58Z",
+      "pushed_at": "2026-08-31T15:50:32Z",
+      "git_url": "git://github.com/remotion-dev/remotion.git",
+      "ssh_url": "git@github.com:remotion-dev/remotion.git",
+      "clone_url": "https://github.com/remotion-dev/remotion.git",
+      "svn_url": "https://github.com/remotion-dev/remotion",
+      "homepage": "https://remotion.dev",
+      "size": 4210775,
+      "stargazers_count": 57863,
+      "watchers_count": 57863,
+      "language": "TypeScript",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": false,
+      "has_wiki": false,
+      "has_pages": true,
+      "has_discussions": true,
+      "forks_count": 4392,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 173,
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": false,
+      "has_pull_requests": true,
+      "pull_request_creation_policy": "all",
+      "topics": [
+        "javascript",
+        "react",
+        "video"
+      ],
+      "visibility": "public",
+      "forks": 4392,
+      "open_issues": 173,
+      "watchers": 57863,
+      "default_branch": "main",
+      "temp_clone_token": null,
+      "custom_properties": {},
+      "organization": {
+        "login": "remotion-dev",
+        "id": 85344006,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjg1MzQ0MDA2",
+        "avatar_url": "https://avatars.githubusercontent.com/u/85344006?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/remotion-dev",
+        "html_url": "https://github.com/remotion-dev",
+        "followers_url": "https://api.github.com/users/remotion-dev/followers",
+        "following_url": "https://api.github.com/users/remotion-dev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/remotion-dev/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/remotion-dev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/remotion-dev/subscriptions",
+        "organizations_url": "https://api.github.com/users/remotion-dev/orgs",
+        "repos_url": "https://api.github.com/users/remotion-dev/repos",
+        "events_url": "https://api.github.com/users/remotion-dev/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/remotion-dev/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "network_count": 4392,
+      "subscribers_count": 169
+    },
+    "owner": {
+      "login": "remotion-dev",
+      "id": 85344006,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjg1MzQ0MDA2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/85344006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/remotion-dev",
+      "html_url": "https://github.com/remotion-dev",
+      "followers_url": "https://api.github.com/users/remotion-dev/followers",
+      "following_url": "https://api.github.com/users/remotion-dev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/remotion-dev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/remotion-dev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/remotion-dev/subscriptions",
+      "organizations_url": "https://api.github.com/users/remotion-dev/orgs",
+      "repos_url": "https://api.github.com/users/remotion-dev/repos",
+      "events_url": "https://api.github.com/users/remotion-dev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/remotion-dev/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false,
+      "name": "Remotion",
+      "company": null,
+      "blog": "https://remotion.dev",
+      "location": null,
+      "email": "hi@remotion.dev",
+      "hireable": null,
+      "bio": "Make videos programmatically",
+      "twitter_username": "remotion",
+      "public_repos": 100,
+      "public_gists": 0,
+      "followers": 1639,
+      "following": 0,
+      "created_at": "2021-06-04T10:12:55Z",
+      "updated_at": "2026-07-26T11:40:14Z"
+    },
+    "openIssues": [
+      {
+        "number": 11000,
+        "title": "Elements: Show iframe in Browser Studio",
+        "created_at": "2026-08-31T14:28:39Z",
+        "state": "open"
+      },
+      {
+        "number": 10999,
+        "title": "Elements: Short-circuit when in iframe",
+        "created_at": "2026-08-31T14:27:52Z",
+        "state": "open"
+      },
+      {
+        "number": 10996,
+        "title": "Reordering compositions",
+        "created_at": "2026-08-31T13:49:31Z",
+        "state": "open"
+      },
+      {
+        "number": 10995,
+        "title": "Browser Studio: Support dragging compositions onto the canvas and timeline",
+        "created_at": "2026-08-31T13:30:12Z",
+        "state": "open"
+      },
+      {
+        "number": 10978,
+        "title": "Elements: algolia search shows wrong element title on some elements",
+        "created_at": "2026-08-31T10:48:56Z",
+        "state": "open"
+      },
+      {
+        "number": 10968,
+        "title": "Ghost trails / frame smearing when rendering transparent WebM (alpha channel) with <Video> from @remotion/media on lambda",
+        "created_at": "2026-08-31T09:10:04Z",
+        "state": "open"
+      },
+      {
+        "number": 10967,
+        "title": "Elements: keep the same element color where possible",
+        "created_at": "2026-08-31T08:43:56Z",
+        "state": "open"
+      },
+      {
+        "number": 10965,
+        "title": "Elements: Reconsider layout of Install Element dialog",
+        "created_at": "2026-08-31T08:23:46Z",
+        "state": "open"
+      },
+      {
+        "number": 10964,
+        "title": "Elements: Better design for right sidebar",
+        "created_at": "2026-08-31T08:22:19Z",
+        "state": "open"
+      },
+      {
+        "number": 10963,
+        "title": "Elements: Captions are not editable",
+        "created_at": "2026-08-31T08:19:13Z",
+        "state": "open"
+      },
+      {
+        "number": 10960,
+        "title": "<Player /> permanently mutes itself during user-initiated playback on mobile, warning about an autoPlay prop that is not set",
+        "created_at": "2026-08-30T12:28:46Z",
+        "state": "open"
+      },
+      {
+        "number": 10934,
+        "title": "Splitting leads to sequences being out of order",
+        "created_at": "2026-08-28T11:55:26Z",
+        "state": "open"
+      },
+      {
+        "number": 10926,
+        "title": "Remotion Canvas Masterplan",
+        "created_at": "2026-08-28T09:35:00Z",
+        "state": "open"
+      },
+      {
+        "number": 10923,
+        "title": "Studio should allow children to be collapsed",
+        "created_at": "2026-08-28T09:17:05Z",
+        "state": "open"
+      },
+      {
+        "number": 10918,
+        "title": "Studio: Have Transcribe with `@remotion/whisper-webgpu` as a quick action for video and audio layers",
+        "created_at": "2026-08-28T08:55:20Z",
+        "state": "open"
+      },
+      {
+        "number": 10917,
+        "title": "Studio: Show audio levels while playback",
+        "created_at": "2026-08-28T08:52:58Z",
+        "state": "open"
+      },
+      {
+        "number": 10912,
+        "title": "Studio: Preserve sequence position when dragged left outside the timeline",
+        "created_at": "2026-08-28T07:53:34Z",
+        "state": "open"
+      },
+      {
+        "number": 10909,
+        "title": "`@remotion/media` `<Video>` frame extraction times out in Docker when the memory limit is above 16GB",
+        "created_at": "2026-08-28T03:35:45Z",
+        "state": "open"
+      },
+      {
+        "number": 10848,
+        "title": "Elements: Avoid dead ends when Install in Studio targets a non-insertable composition",
+        "created_at": "2026-08-26T13:22:36Z",
+        "state": "open"
+      },
+      {
+        "number": 10817,
+        "title": "`@remotion/canvas`: Define the Canvas and Studio ownership boundary",
+        "created_at": "2026-08-25T14:46:21Z",
+        "state": "open"
+      },
+      {
+        "number": 10814,
+        "title": "Docs: Turn remotion.dev/brand into an Element collection",
+        "created_at": "2026-08-25T13:57:39Z",
+        "state": "open"
+      },
+      {
+        "number": 10748,
+        "title": "@remotion/web-renderer: playbackRate makes audio sound high-pitched in client renders",
+        "created_at": "2026-08-23T14:30:20Z",
+        "state": "open"
+      },
+      {
+        "number": 10744,
+        "title": "`@remotion/studio-server`: Evaluate replacing Prettier with Recast formatting options",
+        "created_at": "2026-08-23T07:04:57Z",
+        "state": "open"
+      },
+      {
+        "number": 10736,
+        "title": "Studio: Reduce Visual Mode edit-to-canvas latency",
+        "created_at": "2026-08-22T14:45:33Z",
+        "state": "open"
+      },
+      {
+        "number": 10654,
+        "title": "`@remotion/renderer`: Report available memory instead of free pages",
+        "created_at": "2026-08-20T16:42:45Z",
+        "state": "open"
+      },
+      {
+        "number": 10606,
+        "title": "Studio: Add an on-canvas border radius control",
+        "created_at": "2026-08-20T07:01:06Z",
+        "state": "open"
+      },
+      {
+        "number": 10433,
+        "title": "registerUsageEvent() should allow bulk updates",
+        "created_at": "2026-08-14T09:38:49Z",
+        "state": "open"
+      },
+      {
+        "number": 10387,
+        "title": "\"Wrap in HtmlInCanvas\" quick action",
+        "created_at": "2026-08-13T06:24:58Z",
+        "state": "open"
+      },
+      {
+        "number": 10352,
+        "title": "Have documentation of how to edit canvas capture video with Remotion Studio",
+        "created_at": "2026-08-12T09:19:30Z",
+        "state": "open"
+      },
+      {
+        "number": 10346,
+        "title": "Document the data structure of the internal metadata inside video file of canvas capture",
+        "created_at": "2026-08-12T09:17:20Z",
+        "state": "open"
+      },
+      {
+        "number": 10345,
+        "title": "Streamline how to install Canvas Capture Extension and explain in Docs",
+        "created_at": "2026-08-12T09:16:03Z",
+        "state": "open"
+      },
+      {
+        "number": 10344,
+        "title": "Canvas Capture Masterplan",
+        "created_at": "2026-08-12T09:15:34Z",
+        "state": "open"
+      },
+      {
+        "number": 10289,
+        "title": "`@remotion/effects`: Add a `lut()` effect",
+        "created_at": "2026-08-10T11:42:54Z",
+        "state": "open"
+      },
+      {
+        "number": 10288,
+        "title": "`@remotion/effects`: Add a `curves()` effect",
+        "created_at": "2026-08-10T11:42:52Z",
+        "state": "open"
+      },
+      {
+        "number": 10251,
+        "title": "Color correction effect",
+        "created_at": "2026-08-07T12:11:27Z",
+        "state": "open"
+      },
+      {
+        "number": 10235,
+        "title": "Feature Request: Export timeline / edit decision list (EDL / FCPXML / Premiere XML / OTIO) for DaVinci Resolve & Premiere Pro",
+        "created_at": "2026-08-07T03:19:47Z",
+        "state": "open"
+      },
+      {
+        "number": 10210,
+        "title": "remotion.dev/convert There is no way to play the video while we are cropping",
+        "created_at": "2026-08-06T08:06:56Z",
+        "state": "open"
+      },
+      {
+        "number": 10207,
+        "title": "remotion.dev/convert: Bug with trimmer",
+        "created_at": "2026-08-06T07:54:09Z",
+        "state": "open"
+      },
+      {
+        "number": 9954,
+        "title": "remotion.dev/compress",
+        "created_at": "2026-07-30T15:53:35Z",
+        "state": "open"
+      },
+      {
+        "number": 9917,
+        "title": "Web Renderer: Output is different in preview than when rendered via renderMediaOnWeb()",
+        "created_at": "2026-07-30T09:15:10Z",
+        "state": "open"
+      },
+      {
+        "number": 9916,
+        "title": "Web Renderer: render still button does not apply html-in-canvas effects, while rendering a video does",
+        "created_at": "2026-07-30T09:06:10Z",
+        "state": "open"
+      },
+      {
+        "number": 9834,
+        "title": "Skills for agentic remotion.dev/convert",
+        "created_at": "2026-07-29T04:32:17Z",
+        "state": "open"
+      },
+      {
+        "number": 9833,
+        "title": "Agentic remotion.dev/convert",
+        "created_at": "2026-07-29T04:31:07Z",
+        "state": "open"
+      },
+      {
+        "number": 9829,
+        "title": "Studio: Optimistic updates everywhere",
+        "created_at": "2026-07-28T16:41:37Z",
+        "state": "open"
+      },
+      {
+        "number": 9819,
+        "title": "`npm audit` reports",
+        "created_at": "2026-07-28T15:15:17Z",
+        "state": "open"
+      },
+      {
+        "number": 9816,
+        "title": "Studio: Have a codemod for adding ProRes decoder",
+        "created_at": "2026-07-28T14:54:07Z",
+        "state": "open"
+      },
+      {
+        "number": 9779,
+        "title": "Remotion Elements: Publish the v1 announcement",
+        "created_at": "2026-07-28T07:34:07Z",
+        "state": "open"
+      },
+      {
+        "number": 9778,
+        "title": "Remotion Elements: Prepare v1 launch materials",
+        "created_at": "2026-07-28T07:34:05Z",
+        "state": "open"
+      },
+      {
+        "number": 9770,
+        "title": "Remotion Elements: Announce v1",
+        "created_at": "2026-07-28T07:33:42Z",
+        "state": "open"
+      },
+      {
+        "number": 9750,
+        "title": "Studio Sidebars: Dragging to left can immediately hide it",
+        "created_at": "2026-07-27T15:55:09Z",
+        "state": "open"
+      },
+      {
+        "number": 9747,
+        "title": "Bug with playing back heavy 24fps video in `@remotion/media`",
+        "created_at": "2026-07-27T15:29:37Z",
+        "state": "open"
+      },
+      {
+        "number": 9741,
+        "title": "Studio: Document interaction update lifecycle",
+        "created_at": "2026-07-27T15:04:57Z",
+        "state": "open"
+      },
+      {
+        "number": 9734,
+        "title": "\"5 things you could not do with Remotion a month ago\"",
+        "created_at": "2026-07-27T13:44:20Z",
+        "state": "open"
+      },
+      {
+        "number": 9733,
+        "title": "Turn custom screen recorder into a Chrome extension",
+        "created_at": "2026-07-27T13:41:42Z",
+        "state": "open"
+      },
+      {
+        "number": 9719,
+        "title": "Studio: Support REMOTION_PUBLIC_LICENSE_KEY automatically",
+        "created_at": "2026-07-27T12:02:07Z",
+        "state": "open"
+      },
+      {
+        "number": 9710,
+        "title": "5.0: How should the license key be specified in the Studio?",
+        "created_at": "2026-07-27T11:09:11Z",
+        "state": "open"
+      },
+      {
+        "number": 9697,
+        "title": "Branding - Clean .zip with our logos in PNG and vector",
+        "created_at": "2026-07-27T07:01:53Z",
+        "state": "open"
+      },
+      {
+        "number": 9695,
+        "title": "Remotion Branding masterplan",
+        "created_at": "2026-07-27T06:56:32Z",
+        "state": "open"
+      },
+      {
+        "number": 9685,
+        "title": "Start new composition from asset",
+        "created_at": "2026-07-26T11:27:54Z",
+        "state": "open"
+      },
+      {
+        "number": 9682,
+        "title": "Composition inspector: Add \"Generate with coding agent\" section",
+        "created_at": "2026-07-26T10:50:37Z",
+        "state": "open"
+      },
+      {
+        "number": 9679,
+        "title": "Skills 2.0 social media post",
+        "created_at": "2026-07-26T10:03:28Z",
+        "state": "open"
+      },
+      {
+        "number": 9656,
+        "title": "Editor Starter masterplan",
+        "created_at": "2026-07-25T09:41:02Z",
+        "state": "open"
+      },
+      {
+        "number": 9655,
+        "title": "`renderMedia()` `licenseKey` is unclear - public or private?",
+        "created_at": "2026-07-25T09:34:36Z",
+        "state": "open"
+      },
+      {
+        "number": 9653,
+        "title": "Remotion Licensing masterplan",
+        "created_at": "2026-07-25T09:31:45Z",
+        "state": "open"
+      },
+      {
+        "number": 9649,
+        "title": "`@remotion/media` masterplan",
+        "created_at": "2026-07-25T09:11:45Z",
+        "state": "open"
+      },
+      {
+        "number": 9648,
+        "title": "Remotion Core masterplan",
+        "created_at": "2026-07-25T09:07:23Z",
+        "state": "open"
+      },
+      {
+        "number": 9647,
+        "title": "remotion.dev/new masterplan",
+        "created_at": "2026-07-25T09:06:45Z",
+        "state": "open"
+      },
+      {
+        "number": 9644,
+        "title": "remotion.dev/convert: New layout",
+        "created_at": "2026-07-25T09:02:24Z",
+        "state": "open"
+      },
+      {
+        "number": 9643,
+        "title": "remotion.dev/convert: Frame rate change",
+        "created_at": "2026-07-25T09:01:18Z",
+        "state": "open"
+      },
+      {
+        "number": 9642,
+        "title": "remotion.dev/convert masterplan",
+        "created_at": "2026-07-25T09:00:59Z",
+        "state": "open"
+      },
+      {
+        "number": 9641,
+        "title": "Social media masterplan",
+        "created_at": "2026-07-25T08:58:30Z",
+        "state": "open"
+      },
+      {
+        "number": 9640,
+        "title": "Server-side rendering masterplan",
+        "created_at": "2026-07-25T08:41:57Z",
+        "state": "open"
+      },
+      {
+        "number": 9639,
+        "title": "Docs masterplan",
+        "created_at": "2026-07-25T08:35:31Z",
+        "state": "open"
+      },
+      {
+        "number": 9638,
+        "title": "Homepage masterplan",
+        "created_at": "2026-07-25T07:33:53Z",
+        "state": "open"
+      },
+      {
+        "number": 9636,
+        "title": "remotion.dev/automate",
+        "created_at": "2026-07-25T07:27:17Z",
+        "state": "open"
+      },
+      {
+        "number": 9632,
+        "title": "Homepage section: Discover Remotion",
+        "created_at": "2026-07-25T07:09:38Z",
+        "state": "open"
+      },
+      {
+        "number": 9629,
+        "title": "Better practices for Freezing is now available",
+        "created_at": "2026-07-25T06:34:34Z",
+        "state": "open"
+      },
+      {
+        "number": 9544,
+        "title": "Studio: Make snapping modifier behavior consistent",
+        "created_at": "2026-07-23T14:31:07Z",
+        "state": "open"
+      },
+      {
+        "number": 9534,
+        "title": "Docs: Document ESLint config and plugin packages",
+        "created_at": "2026-07-23T12:01:30Z",
+        "state": "open"
+      },
+      {
+        "number": 9524,
+        "title": "Docs: Document the ANGLE default and SwiftShader fallback",
+        "created_at": "2026-07-23T11:22:45Z",
+        "state": "open"
+      },
+      {
+        "number": 9489,
+        "title": "`@remotion/bundler`: Output bundles to `build` by default",
+        "created_at": "2026-07-23T07:42:46Z",
+        "state": "open"
+      },
+      {
+        "number": 9482,
+        "title": "Player: Set `numberOfSharedAudioTags` default to 0",
+        "created_at": "2026-07-23T07:38:10Z",
+        "state": "open"
+      },
+      {
+        "number": 9467,
+        "title": "Studio: Combine static and keyframed canvas edits into one undo entry",
+        "created_at": "2026-07-22T16:52:33Z",
+        "state": "open"
+      },
+      {
+        "number": 9435,
+        "title": "Dragging a video to the right should be limited to it's natural duration.",
+        "created_at": "2026-07-22T09:01:21Z",
+        "state": "open"
+      },
+      {
+        "number": 9432,
+        "title": "Studio: There should be some indication what the maximum drag is for trimming",
+        "created_at": "2026-07-22T08:52:50Z",
+        "state": "open"
+      },
+      {
+        "number": 9425,
+        "title": "`@remotion/lambda`: Settle uploads and clear progress timers after failures",
+        "created_at": "2026-07-21T20:27:19Z",
+        "state": "open"
+      },
+      {
+        "number": 9421,
+        "title": "`@remotion/lambda`: Handle directory symlinks during site deployment",
+        "created_at": "2026-07-21T20:27:19Z",
+        "state": "open"
+      },
+      {
+        "number": 9420,
+        "title": "`@remotion/lambda`: Normalize deployed S3 paths on Windows",
+        "created_at": "2026-07-21T20:27:19Z",
+        "state": "open"
+      },
+      {
+        "number": 9399,
+        "title": "Problem rendering `disco-light-show` which uses nested HtmlInCanvas",
+        "created_at": "2026-07-21T14:12:53Z",
+        "state": "open"
+      },
+      {
+        "number": 9324,
+        "title": "Optimistic deletion of a Sequence, and Composition",
+        "created_at": "2026-07-20T09:35:43Z",
+        "state": "open"
+      }
+    ],
+    "contributingText": "Issues and pull requests of all sorts are welcome! Please read the [contribution guide](https://remotion.dev/docs/contributing) before you start.\n\n## Getting started (Video)\n\nWatch the contributing video tutorial: [Click here](https://www.youtube.com/watch?v=tgBfJw2tET8)\n\n## Contribution guide\n\n- [General information](https://remotion.dev/docs/contributing)\n- [Implementing a new feature](https://remotion.dev/docs/contributing/feature)\n- [Implementing a new option](https://remotion.dev/docs/contributing/option)\n"
+  }
+}

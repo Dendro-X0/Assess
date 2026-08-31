@@ -1,0 +1,897 @@
+{
+  "meta": {
+    "url": "https://github.com/fluvio-community/fluvio/issues/3842",
+    "human_verdict": "proceed",
+    "notes": "Streaming infra; python wrap bounty",
+    "expected_signals": [
+      "AF-11",
+      "AF-12"
+    ],
+    "slug": "fluvio-community-fluvio-3842",
+    "fetchedAt": "2026-08-31T15:56:49.528Z"
+  },
+  "context": {
+    "parsed": {
+      "owner": "fluvio-community",
+      "repo": "fluvio",
+      "issueNumber": 3842
+    },
+    "issue": {
+      "url": "https://api.github.com/repos/fluvio-community/fluvio/issues/3842",
+      "repository_url": "https://api.github.com/repos/fluvio-community/fluvio",
+      "labels_url": "https://api.github.com/repos/fluvio-community/fluvio/issues/3842/labels{/name}",
+      "comments_url": "https://api.github.com/repos/fluvio-community/fluvio/issues/3842/comments",
+      "events_url": "https://api.github.com/repos/fluvio-community/fluvio/issues/3842/events",
+      "html_url": "https://github.com/fluvio-community/fluvio/issues/3842",
+      "id": 2106485761,
+      "node_id": "I_kwDODD9FJc59jmwB",
+      "number": 3842,
+      "title": "Build a new python wrapping for the fluvio client crate",
+      "user": {
+        "login": "digikata",
+        "id": 74445,
+        "node_id": "MDQ6VXNlcjc0NDQ1",
+        "avatar_url": "https://avatars.githubusercontent.com/u/74445?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/digikata",
+        "html_url": "https://github.com/digikata",
+        "followers_url": "https://api.github.com/users/digikata/followers",
+        "following_url": "https://api.github.com/users/digikata/following{/other_user}",
+        "gists_url": "https://api.github.com/users/digikata/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/digikata/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/digikata/subscriptions",
+        "organizations_url": "https://api.github.com/users/digikata/orgs",
+        "repos_url": "https://api.github.com/users/digikata/repos",
+        "events_url": "https://api.github.com/users/digikata/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/digikata/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "id": 1528841826,
+          "node_id": "MDU6TGFiZWwxNTI4ODQxODI2",
+          "url": "https://api.github.com/repos/fluvio-community/fluvio/labels/enhancement",
+          "name": "enhancement",
+          "color": "a2eeef",
+          "default": true,
+          "description": "New feature or request"
+        },
+        {
+          "id": 1528841827,
+          "node_id": "MDU6TGFiZWwxNTI4ODQxODI3",
+          "url": "https://api.github.com/repos/fluvio-community/fluvio/labels/help%20wanted",
+          "name": "help wanted",
+          "color": "008672",
+          "default": true,
+          "description": "Good issue for community involvement"
+        },
+        {
+          "id": 1762254684,
+          "node_id": "MDU6TGFiZWwxNzYyMjU0Njg0",
+          "url": "https://api.github.com/repos/fluvio-community/fluvio/labels/Client",
+          "name": "Client",
+          "color": "9aedf9",
+          "default": false,
+          "description": ""
+        },
+        {
+          "id": 6492682535,
+          "node_id": "LA_kwDODD9FJc8AAAABgv55Jw",
+          "url": "https://api.github.com/repos/fluvio-community/fluvio/labels/%F0%9F%92%8E%20Bounty",
+          "name": "💎 Bounty",
+          "color": "4f46e5",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 6525764674,
+          "node_id": "LA_kwDODD9FJc8AAAABhPdEQg",
+          "url": "https://api.github.com/repos/fluvio-community/fluvio/labels/%F0%9F%92%B0%20Rewarded",
+          "name": "💰 Rewarded",
+          "color": "15803d",
+          "default": false,
+          "description": null
+        },
+        {
+          "id": 6539824489,
+          "node_id": "LA_kwDODD9FJc8AAAABhc3NaQ",
+          "url": "https://api.github.com/repos/fluvio-community/fluvio/labels/client/python",
+          "name": "client/python",
+          "color": "0B0F9E",
+          "default": false,
+          "description": ""
+        }
+      ],
+      "state": "closed",
+      "locked": false,
+      "assignees": [],
+      "milestone": null,
+      "comments": 9,
+      "created_at": "2024-01-29T21:41:27Z",
+      "updated_at": "2024-02-09T21:34:39Z",
+      "closed_at": "2024-02-06T18:16:51Z",
+      "assignee": null,
+      "author_association": "CONTRIBUTOR",
+      "issue_field_values": [],
+      "type": null,
+      "active_lock_reason": null,
+      "sub_issues_summary": {
+        "total": 0,
+        "completed": 0,
+        "percent_completed": 0
+      },
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "total_blocked_by": 0,
+        "blocking": 0,
+        "total_blocking": 0
+      },
+      "body": "Fluvio-client-python repo https://github.com/infinyon/fluvio-client-python/issues/358\r\n\r\nThe ['rust-cpython](https://github.com/dgrunwald/rust-cpython) crate that the fluvio python client is currently built upon is no longer maintained and is EOL for Python 3.11.\r\n\r\nRebuild the fluvio python client on top of the [PyO3](https://pyo3.rs/) rust to python binding framework. For the initial rebuild, a simple wrapping of the fluvio rust crate in order to connect, consume and produce (preferably async) would be a good start.\r\n\r\nEdit: clarification, the PyO3 rebuild should run in python 3.12",
+      "closed_by": {
+        "login": "digikata",
+        "id": 74445,
+        "node_id": "MDQ6VXNlcjc0NDQ1",
+        "avatar_url": "https://avatars.githubusercontent.com/u/74445?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/digikata",
+        "html_url": "https://github.com/digikata",
+        "followers_url": "https://api.github.com/users/digikata/followers",
+        "following_url": "https://api.github.com/users/digikata/following{/other_user}",
+        "gists_url": "https://api.github.com/users/digikata/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/digikata/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/digikata/subscriptions",
+        "organizations_url": "https://api.github.com/users/digikata/orgs",
+        "repos_url": "https://api.github.com/users/digikata/repos",
+        "events_url": "https://api.github.com/users/digikata/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/digikata/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "reactions": {
+        "url": "https://api.github.com/repos/fluvio-community/fluvio/issues/3842/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "timeline_url": "https://api.github.com/repos/fluvio-community/fluvio/issues/3842/timeline",
+      "performed_via_github_app": null,
+      "state_reason": "completed",
+      "pinned_comment": null
+    },
+    "repo": {
+      "id": 205473061,
+      "node_id": "MDEwOlJlcG9zaXRvcnkyMDU0NzMwNjE=",
+      "name": "fluvio",
+      "full_name": "fluvio-community/fluvio",
+      "private": false,
+      "owner": {
+        "login": "fluvio-community",
+        "id": 163345959,
+        "node_id": "O_kgDOCbx2Jw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/163345959?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/fluvio-community",
+        "html_url": "https://github.com/fluvio-community",
+        "followers_url": "https://api.github.com/users/fluvio-community/followers",
+        "following_url": "https://api.github.com/users/fluvio-community/following{/other_user}",
+        "gists_url": "https://api.github.com/users/fluvio-community/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/fluvio-community/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/fluvio-community/subscriptions",
+        "organizations_url": "https://api.github.com/users/fluvio-community/orgs",
+        "repos_url": "https://api.github.com/users/fluvio-community/repos",
+        "events_url": "https://api.github.com/users/fluvio-community/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/fluvio-community/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/fluvio-community/fluvio",
+      "description": "🦀 event stream processing for developers to collect and transform data in motion to power responsive data intensive applications.",
+      "fork": false,
+      "url": "https://api.github.com/repos/fluvio-community/fluvio",
+      "forks_url": "https://api.github.com/repos/fluvio-community/fluvio/forks",
+      "keys_url": "https://api.github.com/repos/fluvio-community/fluvio/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/fluvio-community/fluvio/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/fluvio-community/fluvio/teams",
+      "hooks_url": "https://api.github.com/repos/fluvio-community/fluvio/hooks",
+      "issue_events_url": "https://api.github.com/repos/fluvio-community/fluvio/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/fluvio-community/fluvio/events",
+      "assignees_url": "https://api.github.com/repos/fluvio-community/fluvio/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/fluvio-community/fluvio/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/fluvio-community/fluvio/tags",
+      "blobs_url": "https://api.github.com/repos/fluvio-community/fluvio/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/fluvio-community/fluvio/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/fluvio-community/fluvio/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/fluvio-community/fluvio/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/fluvio-community/fluvio/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/fluvio-community/fluvio/languages",
+      "stargazers_url": "https://api.github.com/repos/fluvio-community/fluvio/stargazers",
+      "contributors_url": "https://api.github.com/repos/fluvio-community/fluvio/contributors",
+      "subscribers_url": "https://api.github.com/repos/fluvio-community/fluvio/subscribers",
+      "subscription_url": "https://api.github.com/repos/fluvio-community/fluvio/subscription",
+      "commits_url": "https://api.github.com/repos/fluvio-community/fluvio/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/fluvio-community/fluvio/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/fluvio-community/fluvio/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/fluvio-community/fluvio/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/fluvio-community/fluvio/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/fluvio-community/fluvio/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/fluvio-community/fluvio/merges",
+      "archive_url": "https://api.github.com/repos/fluvio-community/fluvio/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/fluvio-community/fluvio/downloads",
+      "issues_url": "https://api.github.com/repos/fluvio-community/fluvio/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/fluvio-community/fluvio/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/fluvio-community/fluvio/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/fluvio-community/fluvio/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/fluvio-community/fluvio/labels{/name}",
+      "releases_url": "https://api.github.com/repos/fluvio-community/fluvio/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/fluvio-community/fluvio/deployments",
+      "created_at": "2019-08-31T00:11:58Z",
+      "updated_at": "2026-08-31T13:02:06Z",
+      "pushed_at": "2026-08-30T15:19:07Z",
+      "git_url": "git://github.com/fluvio-community/fluvio.git",
+      "ssh_url": "git@github.com:fluvio-community/fluvio.git",
+      "clone_url": "https://github.com/fluvio-community/fluvio.git",
+      "svn_url": "https://github.com/fluvio-community/fluvio",
+      "homepage": "https://www.fluvio.io/",
+      "size": 36381,
+      "stargazers_count": 5250,
+      "watchers_count": 5250,
+      "language": "Rust",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": false,
+      "has_wiki": true,
+      "has_pages": false,
+      "has_discussions": true,
+      "forks_count": 531,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 139,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": false,
+      "has_pull_requests": true,
+      "pull_request_creation_policy": "all",
+      "topics": [
+        "cloud-native",
+        "data-analytics",
+        "data-flow",
+        "data-integration",
+        "data-pipelines",
+        "distributed-systems",
+        "event-driven-architecture",
+        "real-time",
+        "rust",
+        "serverless",
+        "stateful",
+        "stream-processing",
+        "stream-processing-engine",
+        "streaming",
+        "streaming-analytics",
+        "streaming-data",
+        "streaming-data-pipelines",
+        "streaming-data-processing",
+        "webassembly"
+      ],
+      "visibility": "public",
+      "forks": 531,
+      "open_issues": 139,
+      "watchers": 5250,
+      "default_branch": "master",
+      "temp_clone_token": null,
+      "custom_properties": {},
+      "organization": {
+        "login": "fluvio-community",
+        "id": 163345959,
+        "node_id": "O_kgDOCbx2Jw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/163345959?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/fluvio-community",
+        "html_url": "https://github.com/fluvio-community",
+        "followers_url": "https://api.github.com/users/fluvio-community/followers",
+        "following_url": "https://api.github.com/users/fluvio-community/following{/other_user}",
+        "gists_url": "https://api.github.com/users/fluvio-community/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/fluvio-community/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/fluvio-community/subscriptions",
+        "organizations_url": "https://api.github.com/users/fluvio-community/orgs",
+        "repos_url": "https://api.github.com/users/fluvio-community/repos",
+        "events_url": "https://api.github.com/users/fluvio-community/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/fluvio-community/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "network_count": 531,
+      "subscribers_count": 42
+    },
+    "owner": {
+      "login": "fluvio-community",
+      "id": 163345959,
+      "node_id": "O_kgDOCbx2Jw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/163345959?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/fluvio-community",
+      "html_url": "https://github.com/fluvio-community",
+      "followers_url": "https://api.github.com/users/fluvio-community/followers",
+      "following_url": "https://api.github.com/users/fluvio-community/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fluvio-community/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fluvio-community/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fluvio-community/subscriptions",
+      "organizations_url": "https://api.github.com/users/fluvio-community/orgs",
+      "repos_url": "https://api.github.com/users/fluvio-community/repos",
+      "events_url": "https://api.github.com/users/fluvio-community/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fluvio-community/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false,
+      "name": "Fluvio Community",
+      "company": null,
+      "blog": "https://fluvio.io",
+      "location": null,
+      "email": null,
+      "hireable": null,
+      "bio": "Fluvio community projects, connectors, dataflows.",
+      "twitter_username": null,
+      "public_repos": 28,
+      "public_gists": 0,
+      "followers": 24,
+      "following": 0,
+      "created_at": "2024-03-13T19:14:59Z",
+      "updated_at": "2026-08-20T20:19:03Z"
+    },
+    "openIssues": [
+      {
+        "number": 4657,
+        "title": "make OpenSSL an optional dependency in fluvio-cli",
+        "created_at": "2026-02-28T09:48:42Z",
+        "state": "open"
+      },
+      {
+        "number": 4625,
+        "title": "rebuild build/release workflow for community Fluvio",
+        "created_at": "2025-12-19T17:27:11Z",
+        "state": "open"
+      },
+      {
+        "number": 4609,
+        "title": "Publishing helm chart",
+        "created_at": "2025-10-23T14:05:06Z",
+        "state": "open"
+      },
+      {
+        "number": 4532,
+        "title": "feature: topic clear without recreatign topic",
+        "created_at": "2025-05-19T18:48:51Z",
+        "state": "open"
+      },
+      {
+        "number": 4464,
+        "title": "tech debt: benchmark storing records in memory",
+        "created_at": "2025-03-21T01:25:15Z",
+        "state": "open"
+      },
+      {
+        "number": 4414,
+        "title": "smdk: group name validation",
+        "created_at": "2025-02-25T17:08:49Z",
+        "state": "open"
+      },
+      {
+        "number": 4406,
+        "title": "ConsumerStream with async-stream instead of custom polling",
+        "created_at": "2025-02-21T16:29:00Z",
+        "state": "open"
+      },
+      {
+        "number": 4387,
+        "title": "add smartmodule parameter to create topic",
+        "created_at": "2025-02-11T17:49:12Z",
+        "state": "open"
+      },
+      {
+        "number": 4369,
+        "title": "CI to run producer tests on WASM",
+        "created_at": "2025-01-28T01:22:28Z",
+        "state": "open"
+      },
+      {
+        "number": 4329,
+        "title": "add `describe` command to  hub",
+        "created_at": "2025-01-15T19:29:01Z",
+        "state": "open"
+      },
+      {
+        "number": 4274,
+        "title": "support humantime_serde in flush-period field",
+        "created_at": "2024-11-25T19:57:41Z",
+        "state": "open"
+      },
+      {
+        "number": 4267,
+        "title": "Can the `ConsumerStream` implement `Clone`?",
+        "created_at": "2024-11-19T23:43:40Z",
+        "state": "open"
+      },
+      {
+        "number": 4245,
+        "title": "[Mirroring] deleting target remote and reconning doesn't sync topics",
+        "created_at": "2024-11-07T21:44:20Z",
+        "state": "open"
+      },
+      {
+        "number": 4244,
+        "title": "[Mirroring] Delete target remote should delete home partition",
+        "created_at": "2024-11-07T20:01:31Z",
+        "state": "open"
+      },
+      {
+        "number": 4177,
+        "title": "Improve the load of store specs on local clusters",
+        "created_at": "2024-09-12T01:03:17Z",
+        "state": "open"
+      },
+      {
+        "number": 4131,
+        "title": "Update fluvio python client with offset management api",
+        "created_at": "2024-08-06T15:51:50Z",
+        "state": "open"
+      },
+      {
+        "number": 4085,
+        "title": "Tests: Create replicas E2E tests",
+        "created_at": "2024-06-27T23:07:56Z",
+        "state": "open"
+      },
+      {
+        "number": 4073,
+        "title": "Allow smartmodules on sink connectors to run client-side",
+        "created_at": "2024-06-19T23:42:40Z",
+        "state": "open"
+      },
+      {
+        "number": 4025,
+        "title": "index repair API and tooling",
+        "created_at": "2024-05-23T16:49:58Z",
+        "state": "open"
+      },
+      {
+        "number": 4015,
+        "title": "smartengine:  missing parameters from smartmodules need to report smartmodule name",
+        "created_at": "2024-05-17T16:42:11Z",
+        "state": "open"
+      },
+      {
+        "number": 3974,
+        "title": "mirroring: audit log and diagnosis ",
+        "created_at": "2024-04-26T00:32:09Z",
+        "state": "open"
+      },
+      {
+        "number": 3968,
+        "title": "Improve fluvio topic describe with additional information",
+        "created_at": "2024-04-24T23:09:40Z",
+        "state": "open"
+      },
+      {
+        "number": 3967,
+        "title": "[Bug]: Consuming raw bytes with CLI return incorrect data",
+        "created_at": "2024-04-24T21:20:01Z",
+        "state": "open"
+      },
+      {
+        "number": 3920,
+        "title": "Add: ability for fluvio connectors to perform record.json.property template parsing and rendering",
+        "created_at": "2024-03-28T22:09:27Z",
+        "state": "open"
+      },
+      {
+        "number": 3881,
+        "title": "curl error on windows subsystem for Linux",
+        "created_at": "2024-02-28T04:17:51Z",
+        "state": "open"
+      },
+      {
+        "number": 3866,
+        "title": "Remove localhost from fluvio in favor of 127.0.0.1",
+        "created_at": "2024-02-12T18:02:28Z",
+        "state": "open"
+      },
+      {
+        "number": 3836,
+        "title": "When a topic is deleted, connected clients should have their connection closed",
+        "created_at": "2024-01-25T22:30:01Z",
+        "state": "open"
+      },
+      {
+        "number": 3800,
+        "title": "Migrate from `async-trait` to native (Rust 1.75)",
+        "created_at": "2023-12-28T19:21:15Z",
+        "state": "open"
+      },
+      {
+        "number": 3799,
+        "title": "Support use of Serde derive for  fluvio protocol  ",
+        "created_at": "2023-12-27T20:20:32Z",
+        "state": "open"
+      },
+      {
+        "number": 3790,
+        "title": "Review replica sync startup delay",
+        "created_at": "2023-12-20T01:11:13Z",
+        "state": "open"
+      },
+      {
+        "number": 3785,
+        "title": "[Bug]: cdk generate project template should refer to fluvio stable release",
+        "created_at": "2023-12-18T17:42:51Z",
+        "state": "open"
+      },
+      {
+        "number": 3784,
+        "title": "Support for inbound/outbound AMQP connector",
+        "created_at": "2023-12-17T18:56:53Z",
+        "state": "open"
+      },
+      {
+        "number": 3739,
+        "title": "bug: different default SPU port",
+        "created_at": "2023-11-23T20:25:12Z",
+        "state": "open"
+      },
+      {
+        "number": 3736,
+        "title": "Add an example of local connector provisioning into a Docker container",
+        "created_at": "2023-11-22T21:53:20Z",
+        "state": "open"
+      },
+      {
+        "number": 3673,
+        "title": "Support constants for versions in `fluvio` proc macro",
+        "created_at": "2023-11-08T05:50:47Z",
+        "state": "open"
+      },
+      {
+        "number": 3653,
+        "title": "Remove Plugins output from `fluvio version` output",
+        "created_at": "2023-11-02T14:51:33Z",
+        "state": "open"
+      },
+      {
+        "number": 3619,
+        "title": "Restrict `cluster` commands based on current profile",
+        "created_at": "2023-10-24T04:34:15Z",
+        "state": "open"
+      },
+      {
+        "number": 3580,
+        "title": "Improve error report when requested connector in arch is not available",
+        "created_at": "2023-10-04T20:24:17Z",
+        "state": "open"
+      },
+      {
+        "number": 3577,
+        "title": "Update syn@1 to syn@2 in fluvio-protocol-derive crate",
+        "created_at": "2023-10-04T19:01:50Z",
+        "state": "open"
+      },
+      {
+        "number": 3507,
+        "title": "tech debt:  async version of pread",
+        "created_at": "2023-08-30T17:54:37Z",
+        "state": "open"
+      },
+      {
+        "number": 3505,
+        "title": "tech debt: migrate `RawFd`",
+        "created_at": "2023-08-30T00:07:38Z",
+        "state": "open"
+      },
+      {
+        "number": 3462,
+        "title": "tech debt:  refactor `notify_followers` from `write_record_set`",
+        "created_at": "2023-08-08T15:13:02Z",
+        "state": "open"
+      },
+      {
+        "number": 3411,
+        "title": "Hub: Connector download need better error message if arch is not present",
+        "created_at": "2023-07-24T21:37:24Z",
+        "state": "open"
+      },
+      {
+        "number": 3374,
+        "title": "Support for Fluvio biary install using alternative package installers",
+        "created_at": "2023-07-05T14:07:03Z",
+        "state": "open"
+      },
+      {
+        "number": 3299,
+        "title": "Update the way we parse Changelog and how we render it on Release notes",
+        "created_at": "2023-05-30T18:58:38Z",
+        "state": "open"
+      },
+      {
+        "number": 3298,
+        "title": "Update release workflow to publish first crates and then proceed with the release",
+        "created_at": "2023-05-30T18:41:06Z",
+        "state": "open"
+      },
+      {
+        "number": 3267,
+        "title": "[Feature] Schema management functionality on streams for InfinyOn Cloud and Fluvio Topics",
+        "created_at": "2023-05-20T01:27:45Z",
+        "state": "open"
+      },
+      {
+        "number": 3240,
+        "title": "tech debt: migrate `syn` to 2.0",
+        "created_at": "2023-05-09T00:06:52Z",
+        "state": "open"
+      },
+      {
+        "number": 3235,
+        "title": "Tech debt: SPU storage separation",
+        "created_at": "2023-05-08T00:14:13Z",
+        "state": "open"
+      },
+      {
+        "number": 3217,
+        "title": "refactor:  Fluvio Run into virtual binary",
+        "created_at": "2023-05-02T23:49:38Z",
+        "state": "open"
+      },
+      {
+        "number": 3215,
+        "title": "Refactor:  Simplify ErrorCode",
+        "created_at": "2023-05-02T00:32:29Z",
+        "state": "open"
+      },
+      {
+        "number": 3184,
+        "title": "Documentation improvement",
+        "created_at": "2023-04-21T23:58:17Z",
+        "state": "open"
+      },
+      {
+        "number": 3182,
+        "title": "[Feature] Deduplication functionality to remove duplicates from topics using incremental identifiers/keys like timestamp",
+        "created_at": "2023-04-21T03:35:45Z",
+        "state": "open"
+      },
+      {
+        "number": 3174,
+        "title": "tech debt:  Testing Fluvio Socket Multiplexor",
+        "created_at": "2023-04-19T19:13:17Z",
+        "state": "open"
+      },
+      {
+        "number": 3143,
+        "title": "[Bug]: fluvio produce is not batching when using interactive mode and `--delivery-semantic at-least-once`",
+        "created_at": "2023-04-14T18:15:17Z",
+        "state": "open"
+      },
+      {
+        "number": 3108,
+        "title": "CI: Port Upgrade test to Rust",
+        "created_at": "2023-03-28T19:42:40Z",
+        "state": "open"
+      },
+      {
+        "number": 3094,
+        "title": "[Bug]: Can't parse output of `helm version --short` with SemVer",
+        "created_at": "2023-03-23T10:47:51Z",
+        "state": "open"
+      },
+      {
+        "number": 3081,
+        "title": "https://github.com/infinyon/fluvio/issues/3267",
+        "created_at": "2023-03-19T18:53:15Z",
+        "state": "open"
+      },
+      {
+        "number": 3009,
+        "title": "Release: CLI package publish gets skipped in re-runs",
+        "created_at": "2023-02-24T20:19:33Z",
+        "state": "open"
+      },
+      {
+        "number": 3003,
+        "title": "CI: Port publish and release functionality to Rust",
+        "created_at": "2023-02-22T23:07:45Z",
+        "state": "open"
+      },
+      {
+        "number": 2998,
+        "title": "CI: Publish/release steps should be idempotent",
+        "created_at": "2023-02-22T04:44:04Z",
+        "state": "open"
+      },
+      {
+        "number": 2960,
+        "title": "fluvio docs mismatch with actual behavior",
+        "created_at": "2023-01-24T05:17:59Z",
+        "state": "open"
+      },
+      {
+        "number": 2949,
+        "title": "[CI] Automate increase of version in `VERSION` file",
+        "created_at": "2023-01-19T19:25:56Z",
+        "state": "open"
+      },
+      {
+        "number": 2879,
+        "title": "Helm packages are not rebuilt after editing",
+        "created_at": "2022-12-14T20:09:54Z",
+        "state": "open"
+      },
+      {
+        "number": 2816,
+        "title": "stress test create and delete topic",
+        "created_at": "2022-11-17T03:41:34Z",
+        "state": "open"
+      },
+      {
+        "number": 2792,
+        "title": "[Bug]: replication on spu=3 in CI",
+        "created_at": "2022-11-09T00:52:12Z",
+        "state": "open"
+      },
+      {
+        "number": 2782,
+        "title": "follow-up: data type for Offsets",
+        "created_at": "2022-11-07T13:22:56Z",
+        "state": "open"
+      },
+      {
+        "number": 2758,
+        "title": "Integration Test for Counters in the SmartModuleEngine",
+        "created_at": "2022-10-26T09:09:17Z",
+        "state": "open"
+      },
+      {
+        "number": 2757,
+        "title": "Integration test for counters in the SPU",
+        "created_at": "2022-10-26T09:07:57Z",
+        "state": "open"
+      },
+      {
+        "number": 2544,
+        "title": "[CI] Move build artifact publish steps",
+        "created_at": "2022-08-11T00:18:39Z",
+        "state": "open"
+      },
+      {
+        "number": 2461,
+        "title": "hourly failure test do to PVC pending",
+        "created_at": "2022-07-03T15:48:23Z",
+        "state": "open"
+      },
+      {
+        "number": 2454,
+        "title": "Remove unnecessary offset fetch during start of Consumer",
+        "created_at": "2022-07-01T04:02:33Z",
+        "state": "open"
+      },
+      {
+        "number": 2390,
+        "title": "[fluvio-test] Add longevity test health checks",
+        "created_at": "2022-05-18T23:05:28Z",
+        "state": "open"
+      },
+      {
+        "number": 2326,
+        "title": "Catch panic in SmartModule ",
+        "created_at": "2022-04-19T14:19:25Z",
+        "state": "open"
+      },
+      {
+        "number": 2316,
+        "title": "Installation: Package manager for Linux",
+        "created_at": "2022-04-17T18:57:32Z",
+        "state": "open"
+      },
+      {
+        "number": 2314,
+        "title": "Installation: Home Brew Package Manager",
+        "created_at": "2022-04-17T17:52:21Z",
+        "state": "open"
+      },
+      {
+        "number": 2309,
+        "title": "[Bug]: Fluvio cluster install should suggest `fluvio cluster delete` for chart mismatch",
+        "created_at": "2022-04-15T16:32:10Z",
+        "state": "open"
+      },
+      {
+        "number": 2271,
+        "title": "Topic should show timestamp of last produced record",
+        "created_at": "2022-03-25T18:46:54Z",
+        "state": "open"
+      },
+      {
+        "number": 2270,
+        "title": "[Tracking] Client-side performance counters for producer/consumer",
+        "created_at": "2022-03-25T18:04:26Z",
+        "state": "open"
+      },
+      {
+        "number": 2215,
+        "title": "Performance:  Too many threads",
+        "created_at": "2022-02-19T05:10:06Z",
+        "state": "open"
+      },
+      {
+        "number": 2213,
+        "title": "replace docker with `rancher` or `lima` for running Github action for Mac",
+        "created_at": "2022-02-18T17:57:20Z",
+        "state": "open"
+      },
+      {
+        "number": 2194,
+        "title": "storage: increase read and write concurrency",
+        "created_at": "2022-02-15T22:59:28Z",
+        "state": "open"
+      },
+      {
+        "number": 2174,
+        "title": "[Bug]: Topic creation fails if the directory with the spu-logs has a directory with logs for that topic",
+        "created_at": "2022-02-09T17:29:55Z",
+        "state": "open"
+      },
+      {
+        "number": 2144,
+        "title": "CI - Separate k8 image load from build script",
+        "created_at": "2022-01-28T20:35:34Z",
+        "state": "open"
+      },
+      {
+        "number": 2138,
+        "title": "Re-enable test-connector in Smoke test",
+        "created_at": "2022-01-25T01:22:55Z",
+        "state": "open"
+      },
+      {
+        "number": 2089,
+        "title": "[Enhancement]: RESP protocol Support ",
+        "created_at": "2022-01-08T04:28:18Z",
+        "state": "open"
+      },
+      {
+        "number": 2083,
+        "title": "Support Tracing subscriber",
+        "created_at": "2022-01-07T18:33:24Z",
+        "state": "open"
+      },
+      {
+        "number": 2039,
+        "title": "re-enable bats delete test",
+        "created_at": "2021-12-24T17:22:00Z",
+        "state": "open"
+      },
+      {
+        "number": 2034,
+        "title": "Update Topic Configuration (basic)",
+        "created_at": "2021-12-22T01:02:37Z",
+        "state": "open"
+      }
+    ],
+    "contributingText": "# Contributing to Fluvio\n\nThank you for contributing. No matter how large or small, contributions are always welcome. Before contributing, please read [Code of Conduct](CODE-OF-CONDUCT.md)\n\n#### Table Of Contents\n\n[Assumptions](#assumptions)\n\n[Ask a Question](#ask-a-question)\n\n[Getting Started](#getting-started)\n\n[Contributing](#contributing)\n\n## Assumptions\nFamiliarity with\n- [Rust](https://www.rust-lang.org)\n- [Kubernetes](https://kubernetes.io)\n\nCurrently, fluvio supports the following platforms:\n- macOS X\n- Linux\n- Other platforms such as Windows can be made to work, but we haven't tried them yet.\n\n## Ask a Question\n\nPlease open an Issue on GitHub with the label `question`.\n\n## Getting Started\n\nFollow our [Download Fluvio](https://www.fluvio.io/docs/fluvio/quickstart) and the corresponding \"Get Started\" page to get fluvio up and running.\n\nTo learn about the Fluvio Architecture and contribute to Fluvio project, please visit the [Architecture](https://www.fluvio.io/docs/fluvio/concepts/architecture/overview/) section.\n\n## Contributing\n\n### Report a Bug\n\nTo report a bug, open an issue on GitHub with the label `bug`. Please ensure the issue has not already been reported.\n\n### Suggest an Enhancement\n\nTo suggest an enhancement, please create an issue on GitHub with the label `enhancement`.\n\n### Creating pull request\n\n- Fork the `fluvio` repository to your GitHub Account.\n\n- Create a branch, submit a PR when your changes are tested and ready for review\n\nIf you’d like to implement a new feature, please consider creating a `feature request` issue first to start a discussion about the feature.\n\n### License\n\nThis project is licensed under the [Apache license](LICENSE). Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in Fluvio by you, shall be licensed as Apache, without any additional terms or conditions.\n\n\n\n\n"
+  }
+}
