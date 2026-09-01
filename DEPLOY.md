@@ -1,5 +1,27 @@
 # Deploy — Assess API
 
+## Quick start (Orbit)
+
+Recommended path — one portal for Cloudflare API + Vercel docs:
+
+```bash
+cd assess-api
+orbit doctor
+orbit login cloudflare
+orbit login vercel
+orbit configure --all
+orbit deploy
+orbit status
+```
+
+Orbit auto-wires `VITE_API_URL` on Vercel after the Workers deploy. Local state lives in `.orbit/` (gitignored).
+
+If deploy fails: `orbit logs --failed` then `orbit retry`.
+
+Manual provider steps below remain valid for debugging or CI.
+
+---
+
 ## Architecture
 
 | Component | Platform | Why |
