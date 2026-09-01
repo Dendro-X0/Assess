@@ -6,7 +6,7 @@ import {
 } from "./polar-webhook.js";
 
 describe("verifyPolarWebhookSignature", () => {
-  it("accepts valid Standard Webhooks signatures", () => {
+  it("accepts valid Standard Webhooks signatures", async () => {
     const secret = "whsec_test";
     const body = JSON.stringify({ type: "subscription.active", data: {} });
     const webhookId = "msg_123";
@@ -16,7 +16,7 @@ describe("verifyPolarWebhookSignature", () => {
       .digest("base64");
 
     expect(
-      verifyPolarWebhookSignature(
+      await verifyPolarWebhookSignature(
         secret,
         body,
         webhookId,
@@ -26,9 +26,9 @@ describe("verifyPolarWebhookSignature", () => {
     ).toBe(true);
   });
 
-  it("rejects invalid signatures", () => {
+  it("rejects invalid signatures", async () => {
     expect(
-      verifyPolarWebhookSignature("secret", "{}", "id", "123", "v1,bad"),
+      await verifyPolarWebhookSignature("secret", "{}", "id", "123", "v1,bad"),
     ).toBe(false);
   });
 });

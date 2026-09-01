@@ -1,6 +1,8 @@
 import { createHmac } from "node:crypto";
 import { describe, expect, it } from "vitest";
-import { createDb, generateApiKeyToken, hashApiKey } from "./db.js";
+import { createApp } from "./app.js";
+import { createSqliteDb } from "./db/sqlite.js";
+import { generateApiKeyToken, hashApiKey } from "./db.js";
 import { getPlanLimits } from "./quota.js";
 import type { Env } from "./env.js";
 
@@ -14,33 +16,33 @@ function testEnv(): Env {
   };
 }
 
-describe("createDb quotas", () => {
-  it("enforces monthly quota per key", () => {
-    const db = createDb(testEnv());
+describe("createSqliteDb quotas", () => {
+  it("enforces monthly quota per key", async () => {
+    const db = createSqliteDb(testEnv());
     const token = generateApiKeyToken();
     const keyId = "key_monthly";
 
-    db.insertApiKey({
+    await db.insertApiKey({
       id: keyId,
-      keyHash: hashApiKey(token, "test-pepper"),
+      keyHash: await hashApiKey(token, "test-pepper"),
       plan: "free",
       monthlyQuota: 2,
       label: "test",
     });
 
-    expect(db.verifyApiKey(token)?.monthlyQuota).toBe(2);
-    expect(db.countUsageThisMonth(keyId)).toBe(0);
+    expect((await db.verifyApiKey(token))?.monthlyQuota).toBe(2);
+    expect(await db.countUsageThisMonth(keyId)).toBe(0);
 
-    db.recordUsage(keyId, "asr_1");
-    db.recordUsage(keyId, "asr_2");
-    expect(db.countUsageThisMonth(keyId)).toBe(2);
+    await db.recordUsage(keyId, "asr_1");
+    await db.recordUsage(keyId, "asr_2");
+    expect(await db.countUsageThisMonth(keyId)).toBe(2);
   });
 
-  it("enforces per-minute rate limit", () => {
-    const db = createDb(testEnv());
+  it("enforces per-minute rate limit", async () => {
+    const db = createSqliteDb(testEnv());
     const keyId = "key_rate";
 
-    db.insertApiKey({
+    await db.insertApiKey({
       id: keyId,
       keyHash: "hash",
       plan: "free",
@@ -49,26 +51,26 @@ describe("createDb quotas", () => {
     });
 
     for (let i = 0; i < 10; i += 1) {
-      db.recordRateEvent(keyId);
+      await db.recordRateEvent(keyId);
     }
 
-    expect(db.countRequestsLastMinute(keyId)).toBe(10);
+    expect(await db.countRequestsLastMinute(keyId)).toBe(10);
   });
 
-  it("upgrades and downgrades plan via updateKeyPlan", () => {
-    const db = createDb(testEnv());
+  it("upgrades and downgrades plan via updateKeyPlan", async () => {
+    const db = createSqliteDb(testEnv());
     const token = generateApiKeyToken();
     const keyId = "key_polar";
 
-    db.insertApiKey({
+    await db.insertApiKey({
       id: keyId,
-      keyHash: hashApiKey(token, "test-pepper"),
+      keyHash: await hashApiKey(token, "test-pepper"),
       plan: "free",
       monthlyQuota: getPlanLimits("free").monthlyQuota,
       label: "test",
     });
 
-    const upgraded = db.updateKeyPlan({
+    const upgraded = await db.updateKeyPlan({
       keyId,
       plan: "pro",
       monthlyQuota: getPlanLimits("pro").monthlyQuota,
@@ -77,7 +79,7 @@ describe("createDb quotas", () => {
     });
 
     expect(upgraded).toBe(true);
-    const record = db.verifyApiKey(token);
+    const record = await db.verifyApiKey(token);
     expect(record?.plan).toBe("pro");
     expect(record?.monthlyQuota).toBe(500);
     expect(record?.polarSubscriptionId).toBe("sub_123");
@@ -100,7 +102,6 @@ function signPolarPayload(secret: string, body: string) {
 
 describe("polar webhook route", () => {
   it("upgrades key when subscription becomes active", async () => {
-    const { createApp } = await import("./app.js");
     const secret = "whsec_test";
     const token = generateApiKeyToken();
     const keyId = "key_webhook";
@@ -110,12 +111,12 @@ describe("polar webhook route", () => {
       polarWebhookSecret: secret,
     };
 
-    const db = createDb(env);
+    const db = createSqliteDb(env);
     const app = createApp(env, db);
 
-    db.insertApiKey({
+    await db.insertApiKey({
       id: keyId,
-      keyHash: hashApiKey(token, env.apiKeyPepper),
+      keyHash: await hashApiKey(token, env.apiKeyPepper),
       plan: "free",
       monthlyQuota: 20,
       label: "test",
@@ -144,27 +145,26 @@ describe("polar webhook route", () => {
 
     expect(response.status).toBe(200);
     expect(await response.json()).toMatchObject({ ok: true, action: "upgraded", plan: "pro" });
-    expect(db.verifyApiKey(token)?.plan).toBe("pro");
+    expect((await db.verifyApiKey(token))?.plan).toBe("pro");
   });
 });
 
 describe("assess route quotas", () => {
   it("returns 429 when monthly quota is exceeded", async () => {
-    const { createApp } = await import("./app.js");
     const token = generateApiKeyToken();
     const keyId = "key_assess_quota";
     const env = testEnv();
-    const db = createDb(env);
+    const db = createSqliteDb(env);
     const app = createApp(env, db);
 
-    db.insertApiKey({
+    await db.insertApiKey({
       id: keyId,
-      keyHash: hashApiKey(token, env.apiKeyPepper),
+      keyHash: await hashApiKey(token, env.apiKeyPepper),
       plan: "free",
       monthlyQuota: 1,
       label: "test",
     });
-    db.recordUsage(keyId, "asr_used");
+    await db.recordUsage(keyId, "asr_used");
 
     const response = await app.request("/v1/assess", {
       method: "POST",
@@ -183,23 +183,22 @@ describe("assess route quotas", () => {
   });
 
   it("returns 429 when per-minute rate limit is exceeded", async () => {
-    const { createApp } = await import("./app.js");
     const token = generateApiKeyToken();
     const keyId = "key_assess_rate";
     const env = testEnv();
-    const db = createDb(env);
+    const db = createSqliteDb(env);
     const app = createApp(env, db);
 
-    db.insertApiKey({
+    await db.insertApiKey({
       id: keyId,
-      keyHash: hashApiKey(token, env.apiKeyPepper),
+      keyHash: await hashApiKey(token, env.apiKeyPepper),
       plan: "free",
       monthlyQuota: 20,
       label: "test",
     });
 
     for (let i = 0; i < 10; i += 1) {
-      db.recordRateEvent(keyId);
+      await db.recordRateEvent(keyId);
     }
 
     const response = await app.request("/v1/assess", {

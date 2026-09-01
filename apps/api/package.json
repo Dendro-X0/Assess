@@ -4,12 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "wrangler dev",
+    "dev:node": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js",
+    "deploy": "wrangler deploy",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --config vitest.config.ts",
     "lint": "tsc -p tsconfig.json --noEmit",
+    "db:migrate:local": "wrangler d1 migrations apply assess-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply assess-db --remote",
     "db:seed-dev-key": "tsx src/scripts/seed-dev-key.ts",
     "db:seed-pro-key": "tsx src/scripts/seed-pro-key.ts"
   },
@@ -17,16 +20,18 @@
     "@assess/github": "workspace:*",
     "@assess/scoring": "workspace:*",
     "@assess/signals": "workspace:*",
-    "@hono/node-server": "^1.14.1",
-    "better-sqlite3": "^11.9.0",
-    "dotenv": "^16.4.7",
     "hono": "^4.7.5"
   },
   "devDependencies": {
+    "@hono/node-server": "^1.14.0",
+    "@cloudflare/workers-types": "^4.20250214.0",
     "@types/better-sqlite3": "^7.6.12",
     "@types/node": "^22.13.10",
+    "better-sqlite3": "^11.9.0",
+    "dotenv": "^16.4.7",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.9"
+    "vitest": "^3.0.9",
+    "wrangler": "^3.109.2"
   }
 }

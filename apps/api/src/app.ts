@@ -1,12 +1,12 @@
 import { cors } from "hono/cors";
 import { Hono } from "hono";
-import { createDb, type AssessDb } from "./db.js";
+import type { AssessDb } from "./db.js";
 import type { Env } from "./env.js";
 import { handleAssess } from "./routes/assess.js";
 import { handleCreateKey } from "./routes/keys.js";
 import { handlePolarWebhook } from "./routes/polar.js";
 
-export function createApp(env: Env, db: AssessDb = createDb(env)) {
+export function createApp(env: Env, db: AssessDb) {
   const app = new Hono();
 
   app.use(

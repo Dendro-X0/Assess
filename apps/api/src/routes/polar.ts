@@ -28,7 +28,7 @@ export async function handlePolarWebhook(
   }
 
   const rawBody = await c.req.text();
-  const verified = verifyPolarWebhookSignature(
+  const verified = await verifyPolarWebhookSignature(
     env.polarWebhookSecret,
     rawBody,
     c.req.header("webhook-id"),
@@ -55,7 +55,7 @@ export async function handlePolarWebhook(
 
   if (PRO_EVENTS.has(event.type)) {
     const pro = getPlanLimits("pro");
-    db.updateKeyPlan({
+    await db.updateKeyPlan({
       keyId,
       plan: "pro",
       monthlyQuota: pro.monthlyQuota,
@@ -67,7 +67,7 @@ export async function handlePolarWebhook(
 
   if (DOWNGRADE_EVENTS.has(event.type)) {
     const free = getPlanLimits("free");
-    db.updateKeyPlan({
+    await db.updateKeyPlan({
       keyId,
       plan: "free",
       monthlyQuota: free.monthlyQuota,

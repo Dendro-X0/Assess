@@ -1,6 +1,6 @@
-import { randomBytes } from "node:crypto";
 import type { Context } from "hono";
 import { getClientIp } from "../client-ip.js";
+import { randomHex } from "../crypto.js";
 import type { AssessDb } from "../db.js";
 import { generateApiKeyToken, hashApiKey } from "../db.js";
 import type { Env } from "../env.js";
@@ -16,7 +16,7 @@ export async function handleCreateKey(
   db: AssessDb,
 ): Promise<Response> {
   const ip = getClientIp(c);
-  const recentSignups = db.countSignupsLastHour(ip);
+  const recentSignups = await db.countSignupsLastHour(ip);
 
   if (recentSignups >= env.signupRatePerHour) {
     return c.json(
@@ -44,17 +44,17 @@ export async function handleCreateKey(
       : "signup";
 
   const free = getPlanLimits("free");
-  const keyId = `key_${randomBytes(6).toString("hex")}`;
+  const keyId = `key_${randomHex(6)}`;
   const token = generateApiKeyToken();
 
-  db.insertApiKey({
+  await db.insertApiKey({
     id: keyId,
-    keyHash: hashApiKey(token, env.apiKeyPepper),
+    keyHash: await hashApiKey(token, env.apiKeyPepper),
     plan: "free",
     monthlyQuota: free.monthlyQuota,
     label,
   });
-  db.recordSignup(ip, keyId);
+  await db.recordSignup(ip, keyId);
 
   return c.json(
     {

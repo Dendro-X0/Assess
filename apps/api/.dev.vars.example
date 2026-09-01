@@ -1,0 +1,6 @@
+# Local wrangler dev secrets (copy to .dev.vars — never commit .dev.vars)
+API_KEY_PEPPER=dev-only-change-me
+GITHUB_TOKEN=
+# DEV_API_KEY=ask_dev_local_only
+# POLAR_WEBHOOK_SECRET=
+# POLAR_CHECKOUT_URL=

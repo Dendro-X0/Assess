@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from "node:crypto";
+import { hmacSha256Base64, timingSafeEqualBase64 } from "./crypto.js";
 
 export type PolarWebhookEvent = {
   type: string;
@@ -13,32 +13,25 @@ export type PolarWebhookEvent = {
   };
 };
 
-export function verifyPolarWebhookSignature(
+export async function verifyPolarWebhookSignature(
   secret: string,
   rawBody: string,
   webhookId: string | undefined,
   webhookTimestamp: string | undefined,
   webhookSignature: string | undefined,
-): boolean {
+): Promise<boolean> {
   if (!webhookId || !webhookTimestamp || !webhookSignature) {
     return false;
   }
 
   const signedPayload = `${webhookId}.${webhookTimestamp}.${rawBody}`;
-  const expected = createHmac("sha256", secret).update(signedPayload).digest("base64");
+  const expected = await hmacSha256Base64(secret, signedPayload);
 
   for (const part of webhookSignature.split(" ")) {
     const [version, signature] = part.split(",", 2);
     if (version !== "v1" || !signature) continue;
-
-    try {
-      const a = Buffer.from(signature, "base64");
-      const b = Buffer.from(expected, "base64");
-      if (a.length === b.length && timingSafeEqual(a, b)) {
-        return true;
-      }
-    } catch {
-      // try next signature part
+    if (timingSafeEqualBase64(signature, expected)) {
+      return true;
     }
   }
 

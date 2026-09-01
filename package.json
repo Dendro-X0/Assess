@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm --filter @assess/api dev",
+    "dev:node": "pnpm --filter @assess/api dev:node",
     "dev:docs": "pnpm --filter @assess/docs dev",
     "dev:all": "pnpm --parallel --filter @assess/api --filter @assess/docs dev",
     "build": "pnpm -r build",

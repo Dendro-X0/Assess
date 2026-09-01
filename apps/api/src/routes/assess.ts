@@ -1,8 +1,8 @@
-import { randomBytes } from "node:crypto";
 import { GitHubClient } from "@assess/github";
 import { scoreSignals } from "@assess/scoring";
 import type { Context } from "hono";
 import { runAssessSignals } from "../allowlist.js";
+import { randomHex } from "../crypto.js";
 import type { AssessDb } from "../db.js";
 import type { Env } from "../env.js";
 import { getPlanLimits } from "../quota.js";
@@ -26,13 +26,13 @@ export async function handleAssess(
     return c.json({ error: "unauthorized", message: "Missing Bearer API key" }, 401);
   }
 
-  const key = db.verifyApiKey(token);
+  const key = await db.verifyApiKey(token);
   if (!key) {
     return c.json({ error: "unauthorized", message: "Invalid API key" }, 401);
   }
 
   const rateLimit = getPlanLimits(key.plan).ratePerMinute;
-  const recentRequests = db.countRequestsLastMinute(key.id);
+  const recentRequests = await db.countRequestsLastMinute(key.id);
   if (recentRequests >= rateLimit) {
     return c.json(
       {
@@ -43,9 +43,9 @@ export async function handleAssess(
     );
   }
 
-  db.recordRateEvent(key.id);
+  await db.recordRateEvent(key.id);
 
-  const used = db.countUsageThisMonth(key.id);
+  const used = await db.countUsageThisMonth(key.id);
   if (used >= key.monthlyQuota) {
     return c.json(
       {
@@ -78,7 +78,7 @@ export async function handleAssess(
   }
 
   const includeEvidence = body.options?.includeEvidence !== false;
-  const assessId = `asr_${randomBytes(8).toString("hex")}`;
+  const assessId = `asr_${randomHex(8)}`;
 
   try {
     const client = new GitHubClient({ token: env.githubToken });
@@ -105,7 +105,7 @@ export async function handleAssess(
       fetchedAt: new Date().toISOString(),
     };
 
-    db.recordUsage(key.id, assessId);
+    await db.recordUsage(key.id, assessId);
     return c.json(response);
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown_error";

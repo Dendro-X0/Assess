@@ -17,13 +17,19 @@ export type Env = {
 };
 
 export function loadEnv(): Env {
-  const corsRaw = process.env.CORS_ORIGINS ?? "http://localhost:5173,http://localhost:5174";
+  const corsRaw =
+    process.env.CORS_ORIGINS ?? "http://localhost:5173,http://localhost:5174";
+  const pepper = process.env.API_KEY_PEPPER;
+  if (process.env.NODE_ENV === "production" && !pepper) {
+    throw new Error("API_KEY_PEPPER is required in production");
+  }
+
   return {
     port: Number.parseInt(process.env.PORT ?? "8787", 10),
     githubToken: process.env.GITHUB_TOKEN || undefined,
     databaseUrl: process.env.DATABASE_URL ?? "./data/assess.db",
-    apiKeyPepper: process.env.API_KEY_PEPPER ?? "dev-pepper",
-    devApiKey: process.env.DEV_API_KEY || undefined,
+    apiKeyPepper: pepper ?? "dev-pepper",
+    devApiKey: process.env.NODE_ENV === "production" ? undefined : process.env.DEV_API_KEY || undefined,
     polarWebhookSecret: process.env.POLAR_WEBHOOK_SECRET || undefined,
     polarCheckoutUrl: process.env.POLAR_CHECKOUT_URL || undefined,
     corsOrigins: corsRaw

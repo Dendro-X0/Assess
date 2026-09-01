@@ -1,13 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { createApp } from "./app.js";
+import { createSqliteDb } from "./db/sqlite.js";
 import { loadEnv } from "./env.js";
 
 describe("createApp", () => {
-  const app = createApp({
+  const env = {
     ...loadEnv(),
     databaseUrl: ":memory:",
     devApiKey: "ask_test",
-  });
+  };
+  const app = createApp(env, createSqliteDb(env));
 
   it("returns health", async () => {
     const response = await app.request("/v1/health");

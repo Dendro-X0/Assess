@@ -7,10 +7,10 @@ Paid-work opportunity risk API — honeypot / farm / unfunded bait scoring for G
 
 ## Stack
 
-- **Hono** + Node 20+
-- **TypeScript** monorepo (`apps/api`, `packages/*`)
-- **SQLite** for API keys + usage metering
-- **Polar** (checkout) — planned in D3
+- **Hono** on **Cloudflare Workers** + **D1** (production API)
+- **Node + SQLite** via `pnpm dev:node` for local testing without Wrangler
+- **TypeScript** monorepo (`apps/api`, `apps/docs`, `packages/*`)
+- **Polar** (checkout) — webhook scaffold in place (D3)
 
 ## Quick start
 
@@ -19,8 +19,11 @@ pnpm install
 cp .env.example .env
 # optional: GITHUB_TOKEN=ghp_... for higher rate limits
 
-# API server (port 8787)
+# API server (Wrangler dev, port 8787)
 pnpm dev
+
+# Or Node + SQLite without Wrangler
+pnpm dev:node
 
 # Docs landing (port 5173) — in another terminal
 pnpm dev:docs
@@ -89,6 +92,7 @@ pnpm assess-local "https://github.com/Scottcjn/rustchain-bounties/issues/16776"
 ## Not yet implemented
 
 - Polar checkout product setup + live checkout link (D3)
+- Deployed production API (Workers + D1) — see [DEPLOY.md](./DEPLOY.md)
 - Deployed production docs (local `apps/docs` ships)
 - Actor mode, batch, webhooks
 

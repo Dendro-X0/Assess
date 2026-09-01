@@ -1,0 +1,17 @@
+projectdiscovery
+remotion-dev
+CopilotKit
+outerbase
+Cap-go
+fluvio-community
+aqualinkorg
+calcom
+triggerdotdev
+continuedev
+drizzle-team
+vercel
+supabase
+withastro
+remix-run
+trpc
+immunefi

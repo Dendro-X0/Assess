@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createApp } from "./app.js";
-import { createDb } from "./db.js";
+import { createSqliteDb } from "./db/sqlite.js";
 import type { Env } from "./env.js";
 
 const env: Env = {
@@ -13,7 +13,7 @@ const env: Env = {
 
 describe("POST /v1/keys", () => {
   it("creates a free-tier API key", async () => {
-    const db = createDb(env);
+    const db = createSqliteDb(env);
     const app = createApp(env, db);
 
     const response = await app.request("/v1/keys", {
@@ -26,15 +26,19 @@ describe("POST /v1/keys", () => {
     });
 
     expect(response.status).toBe(201);
-    const body = await response.json();
+    const body = (await response.json()) as {
+      plan: string;
+      monthlyQuota: number;
+      key: string;
+    };
     expect(body.plan).toBe("free");
     expect(body.monthlyQuota).toBe(20);
     expect(body.key).toMatch(/^ask_/);
-    expect(db.verifyApiKey(body.key)).not.toBeNull();
+    expect(await db.verifyApiKey(body.key)).not.toBeNull();
   });
 
   it("rate limits signups per IP", async () => {
-    const db = createDb(env);
+    const db = createSqliteDb(env);
     const app = createApp(env, db);
 
     const headers = {
